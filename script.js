@@ -1,0 +1,46 @@
+/* ========================= OTVARANJE / ZATVARANJE VANJSKIH POVEZNICA ========================= */
+function showLinks() {
+const links = document.getElementById("linkovi");
+const btn = document.getElementById("btn");
+
+if (links.style.display === "block") {
+
+    links.style.display = "none";
+
+    btn.classList.remove("rotate");
+
+    btn.setAttribute(
+        "aria-label",
+        "Otvori poveznice"
+    );
+
+} else {
+
+    links.style.display = "block";
+
+    btn.classList.add("rotate");
+
+    btn.setAttribute(
+        "aria-label",
+        "Zatvori poveznice"
+    );
+
+}
+}
+/* ========================= ZOOM SLIKA ========================= */
+function zoom(img) {
+const slike =
+    document.querySelectorAll(".gallery img");
+
+slike.forEach(function(slika) {
+
+    if (slika !== img) {
+
+        slika.classList.remove("zoom");
+
+    }
+
+});
+
+img.classList.toggle("zoom");
+}

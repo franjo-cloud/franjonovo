@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="hr">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kibernetički i računalni kriminal</title>
+
+    <!-- CSS datoteka -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- =========================
+         BANER
+    ========================= -->
+
+    <div class="banner">
+
+        <p>
+            Borba protiv kibernetičkog i računalnog kriminala
+        </p>
+
+    </div>
+
+
+        <button type="button">1</button>
+        <button type="button">2</button>
+        <button type="button">3</button>
+        <button type="button">4</button>
+
+    </div>
+ <!-- =========================
+         NASLOV
+    ========================= -->
+
+    <h1>
+        Kibernetički i računalni kriminal
+    </h1>
+
+
+    <!-- =========================
+         GUMB ZA POVEZNICE
+    ========================= -->
+
+    <button
+        id="btn"
+        class="toggleBtn"
+        type="button"
+        onclick="showLinks()"
+        aria-label="Otvori poveznice">
+ ▼
+
+    </button>
+
+
+    <!-- =========================
+         VANJSKE POVEZNICE
+    ========================= -->
+
+    <div
+        class="links"
+        id="linkovi">
+
+        <a
+            href="https://www.facebook.com"
+            target="_blank"
+            rel="noopener noreferrer">
+
+            Facebook
+
+        </a>
+
+
+        <a
+            href="https://www.cert.hr"
+            target="_blank"
+            rel="noopener noreferrer">
+
+            CERT Hrvatska
+
+        </a>
+
+
+        <a
+            href="https://www.europol.europa.eu"
+            target="_blank"
+            rel="noopener noreferrer">
+
+            Europol
+
+        </a>
+ <a
+            href="https://www.mup.gov.hr"
+            target="_blank"
+            rel="noopener noreferrer">
+
+            Ministarstvo unutarnjih poslova RH
+       </a>
+
+    </div>
+
+
+    <!-- =========================
+         GALERIJA
+    ========================= -->
+
+    <div class="gallery">
+
+        <img
+            src="1.jpg"
+            alt="Slika 1"
+            loading="lazy"
+            onclick="zoom(this)">
+
+
+        <img
+            src="2.jpg"
+            alt="Slika 2"
+            loading="lazy"
+            onclick="zoom(this)">
+
+
+        <img
+            src="3.jpg"
+            alt="Slika 3"
+            loading="lazy"
+            onclick="zoom(this)">
+
+
+        <img
+            src="4.jpg"
+            alt="Slika 4"
+            loading="lazy"
+            onclick="zoom(this)">
+
+    </div>
+
+
+    <!-- =========================
+         KARTA + TABLICA
+    ========================= -->
+
+    <div class="content">
+
+
+        <!-- GOOGLE KARTA -->
+  <div class="map">
+
+            <iframe
+loading="lazy"
+                src="https://maps.google.com/maps?width=600&height=600&hl=hr&q=Zagreb&t=&z=12&ie=UTF8&iwloc=B&output=embed"
+                title="Google karta Zagreba">
+            </iframe>
+
+        </div>
+
+
+        <!-- TABLICA -->
+
+        <div class="table-box">
+
+            <div class="table-title">
+
+                Kaznena djela po gradovima 2018 - danas
+
+            </div>
+
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Grad</th>
+                        <th>2018</th>
+                        <th>2019</th>
+                        <th>2020</th>
+                        <th>2021</th>
+                        <th>2022</th>
+                        <th>2023</th>
+                        <th>2024</th>
+                        <th>2025</th>
+                        <th>2026</th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody>
+
+                    <tr>
+
+                        <td>Zagreb</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+
+                    </tr>
+  <tr>
+
+                        <td>Osijek</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>Rijeka</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>Split</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         PODNOŽJE
+    ========================= -->
+
+    <footer>
+
+        Powered by Radni Stol Operations
+
+    </footer>
+
+
+    <!-- JavaScript datoteka -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
