@@ -1,27 +1,53 @@
 /* ========================= OSNOVNE POSTAVKE ========================= */
 { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif; background: #008600; text-align: center; overflow-x: hidden; }
+body { margin: 0; padding: 0;
+font-family: Arial, Helvetica, sans-serif;
+
+background: #008600;
+
+text-align: center;
+
+overflow-x: hidden;
+}
 /* ========================= BANER ========================= */
-.banner { width: 600px; max-width: calc(100% - 20px); height: 50px; margin: 15px auto;
+.banner {
+width: 600px;
+
+max-width: calc(100% - 20px);
+
+height: 50px;
+
+margin: 15px auto;
+
 background: #003366;
+
 color: white;
 
 border-radius: 10px;
+
 overflow: hidden;
 
 display: flex;
+
 align-items: center;
 
-box-shadow: 0 4px 10px rgba(0, 0, 0, .4);
+box-shadow:
+    0 4px 10px rgba(0, 0, 0, .4);
 }
-.banner p { margin: 0; padding: 0;
+.banner p {
+margin: 0;
+
+padding: 0;
+
 white-space: nowrap;
 
 font-size: 20px;
+
 font-weight: bold;
 
-animation: scroll 12s linear infinite;
+animation:
+    scroll 12s linear infinite;
 }
 @keyframes scroll {
 from {
@@ -32,19 +58,45 @@ to {
     transform: translateX(-100%);
 }
 }
-/* ========================= 4 GUMBA 1 2 3 4 ========================= */
-.number-buttons { display: flex; justify-content: center; align-items: center;
+/* ========================= KONTEJNER 4 GUMBA ========================= */
+.number-buttons {
+display: flex;
+
+justify-content: center;
+
+align-items: center;
+
 gap: 8px;
 
+width: fit-content;
+
+max-width: 95%;
+
 margin: 5px auto 15px;
+
+padding: 5px 8px;
+
+background: #fed300;
+
+border-radius: 7px;
+
+box-shadow:
+    0 4px 8px rgba(0, 0, 0, .4);
 }
+/* ========================= GUMBI 1 - 4 ========================= */
 .number-buttons button {
-width: 80px;
+/* Širina se automatski prilagođava tekstu */
+
+width: auto;
+
+min-width: 0;
+
 height: 20px;
 
-padding: 0;
+padding: 0 10px;
 
-border: 1px solid #555;
+border: 1px solid #9a8500;
+
 border-radius: 5px;
 
 background: linear-gradient(
@@ -52,33 +104,51 @@ background: linear-gradient(
     #e6c900
 );
 
-color: #222;
+/* BOJA TEKSTA */
+
+color: #ff00ff;
 
 font-weight: bold;
+
 font-size: 14px;
 
 line-height: 18px;
 
+white-space: nowrap;
+
 cursor: pointer;
+
+/* ISPUPČEN GUMB */
 
 box-shadow:
     0 3px 0 #9a8500,
     0 5px 7px rgba(0, 0, 0, .45);
+
+/* UDUBLJEN TEKST 2 PX */
+
+text-shadow:
+    2px 2px 0 rgba(80, 0, 80, .45);
 
 transition:
     transform .1s,
     box-shadow .1s,
     background .1s;
 }
-/* Gumb kada se pritisne */
+/* ========================= PRITISNUTI GUMB ========================= */
 .number-buttons button:active {
-transform: translateY(3px);
+transform:
+    translateY(3px);
 
 background: #b89f00;
+
+color: #ff00ff;
 
 box-shadow:
     0 1px 0 #756600,
     0 2px 3px rgba(0, 0, 0, .4);
+
+text-shadow:
+    2px 2px 0 rgba(80, 0, 80, .45);
 }
 /* ========================= NASLOV ========================= */
 h1 {
@@ -93,25 +163,30 @@ margin: 20px 10px;
 position: fixed;
 
 top: 10px;
+
 left: 10px;
 
 width: 45px;
+
 height: 45px;
 
 border-radius: 50%;
 
 border: 1px solid #333;
 
-background: linear-gradient(
-    #ffffff,
-    #cccccc
-);
+background:
+    linear-gradient(
+        #ffffff,
+        #cccccc
+    );
 
 box-shadow:
     0 4px 8px rgba(0, 0, 0, .5);
 
 cursor: pointer;
+
 font-size: 25px;
+
 line-height: 40px;
 
 z-index: 1000;
@@ -122,27 +197,30 @@ transition: .4s;
 box-shadow:
     0 2px 3px rgba(0, 0, 0, .5);
 
-transform: translateY(2px);
+transform:
+    translateY(2px);
 }
 .toggleBtn.rotate {
-transform: rotate(180deg);
+transform:
+    rotate(180deg);
 }
 /* ========================= VANJSKE POVEZNICE ========================= */
 .links {
 display: none;
 
 width: 90%;
+
 max-width: 500px;
 
 margin: 10px auto 20px;
 
 padding: 10px;
 
-background: rgba(0, 0, 0, .2);
+background:
+    rgba(0, 0, 0, .2);
 
 border-radius: 12px;
 }
-/* Pojedinačna poveznica */
 .links a {
 display: block;
 
@@ -151,16 +229,18 @@ color: white;
 text-decoration: none;
 
 font-size: 18px;
+
 font-weight: bold;
 
 margin: 10px 0;
 
 padding: 12px;
 
-background: linear-gradient(
-    #064a82,
-    #003366
-);
+background:
+    linear-gradient(
+        #064a82,
+        #003366
+    );
 
 border: 1px solid #00223f;
 
@@ -175,9 +255,9 @@ transition:
     box-shadow .1s,
     background .1s;
 }
-/* Udubljivanje poveznice */
 .links a:active {
-transform: translateY(4px);
+transform:
+    translateY(4px);
 
 background: #00264d;
 
@@ -219,11 +299,12 @@ box-shadow:
 transition: .3s;
 }
 .gallery img:hover {
-transform: scale(1.05);
+transform:
+    scale(1.05);
 }
-
 .gallery img.zoom {
-transform: scale(1.4);
+transform:
+    scale(1.4);
 
 position: relative;
 
@@ -290,11 +371,13 @@ background: #003366;
 
 padding: 10px;
 
-border-radius: 10px 10px 0 0;
+border-radius:
+    10px 10px 0 0;
 
 font-weight: bold;
 
-animation: pulse 2s infinite;
+animation:
+    pulse 2s infinite;
 }
 @keyframes pulse {
 0% {
@@ -309,7 +392,6 @@ animation: pulse 2s infinite;
     opacity: 1;
 }
 }
-/* Tablica */
 table {
 border-collapse: collapse;
 
@@ -319,18 +401,24 @@ min-width: 850px;
 
 width: 100%;
 
-animation: tableShow 1.5s ease;
+animation:
+    tableShow 1.5s ease;
 }
-/* POPRAVLJENO */
 @keyframes tableShow {
 from {
+
     opacity: 0;
-    transform: translateY(40px);
+
+    transform:
+        translateY(40px);
 }
 
 to {
+
     opacity: 1;
-    transform: translateY(0);
+
+    transform:
+        translateY(0);
 }
 }
 th {
@@ -378,26 +466,43 @@ font-weight: bold;
     border-radius: 8px;
 }
 
+
 .banner p {
 
     font-size: 15px;
 }
 
 
+/* 4 GUMBA */
+
 .number-buttons {
 
     gap: 5px;
 
+    width: 95%;
+
+    padding: 5px;
+
     margin: 5px auto 15px;
+
+    flex-wrap: wrap;
 }
+
 
 .number-buttons button {
 
-    width: 80px;
+    width: auto;
 
     height: 20px;
+
+    padding:
+        0 8px;
+
+    font-size: 13px;
 }
 
+
+/* NASLOV */
 
 h1 {
 
@@ -408,6 +513,8 @@ h1 {
     margin: 15px 10px;
 }
 
+
+/* GUMB */
 
 .toggleBtn {
 
@@ -423,7 +530,7 @@ h1 {
 
     line-height: 35px;
 }
-
+/* LINKOVI */
 
 .links {
 
@@ -432,6 +539,7 @@ h1 {
     margin: 10px auto 15px;
 }
 
+
 .links a {
 
     font-size: 16px;
@@ -439,6 +547,8 @@ h1 {
     padding: 11px;
 }
 
+
+/* GALERIJA */
 
 .gallery {
 
@@ -452,6 +562,7 @@ h1 {
     margin: 15px auto;
 }
 
+
 .gallery img {
 
     width: 100%;
@@ -459,11 +570,15 @@ h1 {
     max-width: none;
 }
 
+
 .gallery img.zoom {
 
-    transform: scale(1.15);
+    transform:
+        scale(1.15);
 }
 
+
+/* SADRŽAJ */
 
 .content {
 
@@ -475,12 +590,15 @@ h1 {
 }
 
 
+/* KARTA */
+
 .map {
 
     width: 100%;
 
     border-width: 3px;
 }
+
 
 .map iframe {
 
@@ -490,12 +608,15 @@ h1 {
 }
 
 
+/* TABLICA */
+
 .table-box {
 
     width: 100%;
 
     overflow-x: auto;
 }
+
 
 .table-title {
 
@@ -504,6 +625,7 @@ h1 {
     padding: 9px;
 }
 
+
 table {
 
     min-width: 850px;
@@ -511,12 +633,15 @@ table {
     font-size: 13px;
 }
 
+
 th,
 td {
 
     padding: 8px;
 }
 
+
+/* FOOTER */
 
 footer {
 
@@ -534,6 +659,7 @@ footer {
     height: 40px;
 }
 
+
 .banner p {
 
     font-size: 13px;
@@ -543,14 +669,19 @@ footer {
 .number-buttons {
 
     gap: 3px;
-}
-.number-buttons button {
 
-    width: 80px;
+    padding: 4px;
+}
+
+
+.number-buttons button {
 
     height: 20px;
 
-    font-size: 13px;
+    padding:
+        0 6px;
+
+    font-size: 12px;
 }
 
 
@@ -561,10 +692,12 @@ h1 {
 
 
 .gallery {
-grid-template-columns: 1fr;
+
+    grid-template-columns: 1fr;
 
     width: 85%;
 }
+
 
 .gallery img {
 
@@ -589,6 +722,7 @@ grid-template-columns: 1fr;
 
     transform: none;
 }
+
 
 tr:hover {
 

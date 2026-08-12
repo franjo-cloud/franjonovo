@@ -1,7 +1,11 @@
-/* ========================= OTVARANJE / ZATVARANJE VANJSKIH POVEZNICA ========================= */
+/* ========================= OTVARANJE I ZATVARANJE VANJSKIH POVEZNICA ========================= */
 function showLinks() {
-const links = document.getElementById("linkovi");
-const btn = document.getElementById("btn");
+const links =
+    document.getElementById("linkovi");
+
+const btn =
+    document.getElementById("btn");
+
 
 if (links.style.display === "block") {
 
@@ -14,7 +18,9 @@ if (links.style.display === "block") {
         "Otvori poveznice"
     );
 
-} else {
+}
+
+else {
 
     links.style.display = "block";
 
@@ -30,17 +36,23 @@ if (links.style.display === "block") {
 /* ========================= ZOOM SLIKA ========================= */
 function zoom(img) {
 const slike =
-    document.querySelectorAll(".gallery img");
+    document.querySelectorAll(
+        ".gallery img"
+    );
+
 
 slike.forEach(function(slika) {
 
     if (slika !== img) {
 
-        slika.classList.remove("zoom");
+        slika.classList.remove(
+            "zoom"
+        );
 
     }
 
 });
+
 
 img.classList.toggle("zoom");
 }
