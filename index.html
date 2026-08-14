@@ -1,146 +1,215 @@
 <!DOCTYPE html>
-
 <html lang="hr">
 
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
-<title>Kibernetički i računalni kriminal</title>
+    <title>
+        Kibernetički i računalni kriminal
+    </title>
 
-<!-- CSS -->
-<link rel="stylesheet" href="style.css">
+    <!-- CSS -->
+    <link
+        rel="stylesheet"
+        href="style.css">
+
 </head>
+
 
 <body>
 
-<!-- ========================= BANER ========================= -->
+
+<!-- ==================================================
+     BANER
+================================================== -->
 
 <div class="banner">
 
-<p>
-    Borba protiv kibernetičkog i računalnog kriminala
-</p>
+    <p>
+        Borba protiv kibernetičkog i računalnog kriminala
+    </p>
+
 </div>
 
-<!-- ========================= 4 GUMBA ========================= -->
+
+<!-- ==================================================
+     4 GUMBA ISPOD BANERA
+================================================== -->
 
 <div class="number-buttons">
 
-<button type="button">
-    Računalni Kriminal
-</button>
+    <button
+        type="button"
+        onclick="buttonClick(this)">
+        Računalni Kriminal
+    </button>
 
-<button type="button">
-    Prevencija
-</button>
+    <button
+        type="button"
+        onclick="buttonClick(this)">
+        Prevencija
+    </button>
 
-<button type="button">
-    Statistika
-</button>
+    <button
+        type="button"
+        onclick="buttonClick(this)">
+        Statistika
+    </button>
 
-<button type="button">
-    Novosti
-</button>
+    <button
+        type="button"
+        onclick="buttonClick(this)">
+        Novosti
+    </button>
+
 </div>
 
-<!-- ========================= NASLOV ========================= -->
 
-<h1> Kibernetički i računalni kriminal </h1>
+<!-- ==================================================
+     GLAVNI NASLOV
+================================================== -->
 
-<!-- ========================= GUMB ZA POVEZNICE ========================= -->
+<h1>
+    Kibernetički i računalni kriminal
+</h1>
 
-<button id="btn" class="toggleBtn" type="button" onclick="showLinks()" aria-label="Otvori poveznice">
 
-▼
+<!-- ==================================================
+     TEKST ISPOD NASLOVA
+================================================== -->
+
+<p class="small-text">
+    ovo je moj text
+</p>
+
+
+<!-- ==================================================
+     DRUGI NASLOV
+================================================== -->
+
+<h2>
+    Naslov dva
+</h2>
+
+
+<!-- ==================================================
+     TEKST ISPOD DRUGOG NASLOVA
+================================================== -->
+
+<p class="small-text">
+    ovo je moj text
+</p>
+
+
+<!-- ==================================================
+     GUMB ZA VANJSKE POVEZNICE
+================================================== -->
+
+<button
+    id="btn"
+    class="toggleBtn"
+    onclick="showLinks()"
+    aria-label="Otvori poveznice">
+
+    ▼
+
 </button>
 
-<!-- ========================= VANJSKE POVEZNICE ========================= -->
 
-<div class="links" id="linkovi">
+<!-- ==================================================
+     VANJSKE POVEZNICE
+================================================== -->
 
-<a
-    href="https://www.facebook.com"
-    target="_blank"
-    rel="noopener noreferrer">
+<div
+    class="links"
+    id="linkovi">
 
-    Facebook
+    <a
+        href="https://www.facebook.com"
+        target="_blank"
+        rel="noopener noreferrer">
 
-</a>
+        Facebook
 
-
-<a
-    href="https://www.cert.hr"
-    target="_blank"
-    rel="noopener noreferrer">
-
-    CERT Hrvatska
-
-</a>
+    </a>
 
 
-<a
-    href="https://www.europol.europa.eu"
-    target="_blank"
-    rel="noopener noreferrer">
+    <a
+        href="https://www.cert.hr"
+        target="_blank"
+        rel="noopener noreferrer">
 
-    Europol
+        CERT Hrvatska
 
-</a>
+    </a>
 
 
-<a
-    href="https://www.mup.gov.hr"
-    target="_blank"
-    rel="noopener noreferrer">
+    <a
+        href="https://www.europol.europa.eu"
+        target="_blank"
+        rel="noopener noreferrer">
 
-    Ministarstvo unutarnjih poslova RH
+        Europol
 
-</a>
+    </a>
+
+
+    <a
+        href="https://www.mup.gov.hr"
+        target="_blank"
+        rel="noopener noreferrer">
+
+        Ministarstvo unutarnjih poslova RH
+
+    </a>
+
 </div>
 
-<!-- ========================= GALERIJA ========================= -->
+
+<!-- ==================================================
+     GALERIJA SLIKA
+================================================== -->
 
 <div class="gallery">
 
-<img
-    src="1.jpg"
-    alt="Slika 1"
-    loading="lazy"
-    onclick="zoom(this)">
+    <img
+        src="1.jpg"
+        alt="Slika 1"
+        loading="lazy"
+        onclick="zoom(this)">
 
 
-<img
-    src="2.jpg"
-    alt="Slika 2"
-    loading="lazy"
-    onclick="zoom(this)">
+    <img
+        src="2.jpg"
+        alt="Slika 2"
+        loading="lazy"
+        onclick="zoom(this)">
 
 
-<img
-    src="3.jpg"
-    alt="Slika 3"
-    loading="lazy"
-    onclick="zoom(this)">
+    <img
+        src="3.jpg"
+        alt="Slika 3"
+        loading="lazy"
+        onclick="zoom(this)">
 
 
-<img
-    src="4.jpg"
-    alt="Slika 4"
-    loading="lazy"
-    onclick="zoom(this)">
+    <img
+        src="4.jpg"
+        alt="Slika 4"
+        loading="lazy"
+        onclick="zoom(this)">
+
 </div>
 
-<!-- ========================= SADRŽAJ ========================= -->
 
-<div class="content">
-
-<!-- =========================
+<!-- ==================================================
      GOOGLE KARTA
-========================= -->
+================================================== -->
 
 <div class="map">
 
@@ -153,131 +222,173 @@
 </div>
 
 
-<!-- =========================
-     TABLICA
-========================= -->
+<!-- ==================================================
+     TABLICA + GRAF
+================================================== -->
 
-<div class="table-box">
+<div class="data-row">
 
 
-    <div class="table-title">
+    <!-- =========================
+         TABLICA
+    ========================= -->
 
-        Kaznena djela po gradovima 2018 - danas
+    <div class="table-box">
+
+        <div class="table-title">
+
+            Kaznena djela po gradovima 2018 - danas
+
+        </div>
+
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Grad</th>
+
+                    <th>2018</th>
+
+                    <th>2019</th>
+
+                    <th>2020</th>
+
+                    <th>2021</th>
+
+                    <th>2022</th>
+
+                    <th>2023</th>
+
+                    <th>2024</th>
+
+                    <th>2025</th>
+
+                    <th>2026</th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody>
+
+                <tr>
+
+                    <td>Zagreb</td>
+
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>Osijek</td>
+
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>Rijeka</td>
+
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>Split</td>
+
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
 
     </div>
 
 
-    <table>
+    <!-- =========================
+         GRAF
+    ========================= -->
 
-        <thead>
+    <div class="chart-box">
 
-            <tr>
+        <div class="chart-title">
 
-                <th>Grad</th>
+            Broj i razriješena kaznena djela
 
-                <th>2018</th>
-                <th>2019</th>
-                <th>2020</th>
-                <th>2021</th>
-                <th>2022</th>
-                <th>2023</th>
-                <th>2024</th>
-                <th>2025</th>
-                <th>2026</th>
-
-            </tr>
-
-        </thead>
+        </div>
 
 
-        <tbody>
+        <canvas
+            id="myChart"
+            aria-label="Graf broja i razriješenih kaznenih djela">
+        </canvas>
 
-
-            <tr>
-
-                <td>Zagreb</td>
-
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-
-            </tr>
-
-
-            <tr>
-
-                <td>Osijek</td>
-
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-
-            </tr>
-
-
-            <tr>
-
-                <td>Rijeka</td>
-
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-
-            </tr>
-
-
-            <tr>
-
-                <td>Split</td>
-
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-
-            </tr>
-
-
-        </tbody>
-
-    </table>
+    </div>
 
 </div>
-</div>
 
-<!-- ========================= PODNOŽJE ========================= -->
+
+<!-- ==================================================
+     PODNOŽJE
+================================================== -->
 
 <footer>
 
-Powered by Radni Stol Operations
+    Powered by Radni Stol Operations
+
 </footer>
 
-<!-- ========================= JAVASCRIPT ========================= -->
+
+<!-- ==================================================
+     JAVASCRIPT
+================================================== -->
 
 <script src="script.js"></script>
+
 
 </body>
 
