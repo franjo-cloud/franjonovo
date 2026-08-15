@@ -1,5 +1,5 @@
 /* ==================================================
-   OTVARANJE I ZATVARANJE POVEZNICA
+   GLAVNI GUMB - OTVARANJE POVEZNICA
 ================================================== */
 
 function showLinks() {
@@ -41,28 +41,6 @@ function showLinks() {
 
 
 /* ==================================================
-   GUMBI
-================================================== */
-
-function buttonClick(button) {
-
-    /*
-       Kratki vizualni efekt
-       prilikom pritiska gumba.
-    */
-
-    button.classList.add("pressed");
-
-    setTimeout(function() {
-
-        button.classList.remove("pressed");
-
-    }, 150);
-
-}
-
-
-/* ==================================================
    ZOOM SLIKA
 ================================================== */
 
@@ -78,9 +56,7 @@ function zoom(img) {
 
         if (slika !== img) {
 
-            slika.classList.remove(
-                "zoom"
-            );
+            slika.classList.remove("zoom");
 
         }
 
@@ -103,9 +79,7 @@ function drawChart() {
 
 
     if (!canvas) {
-
         return;
-
     }
 
 
@@ -113,60 +87,33 @@ function drawChart() {
         canvas.getContext("2d");
 
 
-    /* ==================================================
-       PODACI
-    ================================================== */
-
     const cities = [
-
         "Zagreb",
-
         "Osijek",
-
         "Rijeka",
-
         "Split"
-
     ];
 
 
-    /*
-       PLAVI STUPCI = BROJ
-    */
+    /* PLAVI = BROJ */
 
     const broj = [
-
         2,
-
         2,
-
         2,
-
         2
-
     ];
 
 
-    /*
-       CRVENI STUPCI = RAZRIJEŠENO
-    */
+    /* CRVENI = RAZRIJEŠENO */
 
     const razrijeseno = [
-
         2,
-
         2,
-
         2,
-
         2
-
     ];
 
-
-    /* ==================================================
-       VELIČINA CANVASA
-    ================================================== */
 
     const rect =
         canvas.getBoundingClientRect();
@@ -179,28 +126,19 @@ function drawChart() {
     canvas.width =
         rect.width * dpr;
 
-
     canvas.height =
         rect.height * dpr;
 
 
-    ctx.scale(
-        dpr,
-        dpr
-    );
+    ctx.scale(dpr, dpr);
 
 
     const width =
         rect.width;
 
-
     const height =
         rect.height;
 
-
-    /* ==================================================
-       POSTAVKE GRAFA
-    ================================================== */
 
     const marginLeft = 55;
 
@@ -223,19 +161,12 @@ function drawChart() {
         marginBottom;
 
 
-    /*
-       Y OS OD 2 DO 20
-    */
-
     const minY = 2;
 
     const maxY = 20;
 
 
-    /* ==================================================
-       ČIŠĆENJE CANVASA
-       NEMA BIJELE POZADINE
-    ================================================== */
+    /* Prozirna pozadina */
 
     ctx.clearRect(
         0,
@@ -254,10 +185,8 @@ function drawChart() {
     ctx.strokeStyle =
         "rgba(220,220,220,.75)";
 
-
     ctx.font =
         "bold 14px Arial";
-
 
     ctx.textAlign =
         "right";
@@ -269,7 +198,6 @@ function drawChart() {
         value += 2
     ) {
 
-
         const y =
             marginTop +
             graphHeight -
@@ -280,31 +208,23 @@ function drawChart() {
             graphHeight;
 
 
-        /* Grid linija */
-
         ctx.beginPath();
-
 
         ctx.moveTo(
             marginLeft,
             y
         );
 
-
         ctx.lineTo(
             width - marginRight,
             y
         );
 
-
         ctx.stroke();
 
 
-        /* Broj na Y osi */
-
         ctx.fillStyle =
             "#ffffff";
-
 
         ctx.fillText(
             value,
@@ -316,52 +236,45 @@ function drawChart() {
 
 
     /* ==================================================
-       Y OS
+       OSI
     ================================================== */
 
     ctx.strokeStyle =
         "rgba(0,0,0,.9)";
 
-
     ctx.lineWidth = 2;
 
 
-    ctx.beginPath();
+    /* Y */
 
+    ctx.beginPath();
 
     ctx.moveTo(
         marginLeft,
         marginTop
     );
 
-
     ctx.lineTo(
         marginLeft,
         marginTop + graphHeight
     );
 
-
     ctx.stroke();
 
 
-    /* ==================================================
-       X OS
-    ================================================== */
+    /* X */
 
     ctx.beginPath();
-
 
     ctx.moveTo(
         marginLeft,
         marginTop + graphHeight
     );
 
-
     ctx.lineTo(
         width - marginRight,
         marginTop + graphHeight
     );
-
 
     ctx.stroke();
 
@@ -378,13 +291,12 @@ function drawChart() {
     const barWidth =
         Math.min(
             35,
-            groupWidth * 0.22
+            groupWidth * .22
         );
 
 
     cities.forEach(
         function(city, index) {
-
 
             const centerX =
                 marginLeft +
@@ -392,88 +304,53 @@ function drawChart() {
                 groupWidth / 2;
 
 
-            /* ==========================================
-               PLAVI STUPAC - BROJ
-            ========================================== */
+            /* PLAVI - BROJ */
 
             drawBar(
-
                 ctx,
-
-                centerX -
-                    barWidth -
-                    2,
-
+                centerX - barWidth - 2,
                 broj[index],
-
                 barWidth,
-
                 "#0066ff",
-
                 graphHeight,
-
                 marginTop,
-
                 minY,
-
                 maxY
-
             );
 
 
-            /* ==========================================
-               CRVENI STUPAC - RAZRIJEŠENO
-            ========================================== */
+            /* CRVENI - RAZRIJEŠENO */
 
             drawBar(
-
                 ctx,
-
                 centerX + 2,
-
                 razrijeseno[index],
-
                 barWidth,
-
                 "#ff0000",
-
                 graphHeight,
-
                 marginTop,
-
                 minY,
-
                 maxY
-
             );
 
 
-            /* ==========================================
-               NAZIV GRADA
-            ========================================== */
+            /* GRAD */
 
             ctx.fillStyle =
                 "#ffffff";
 
-
             ctx.font =
                 "bold 14px Arial";
-
 
             ctx.textAlign =
                 "center";
 
-
             ctx.fillText(
-
                 city,
-
                 centerX,
-
                 marginTop +
                 graphHeight +
                 25
-
             );
 
         }
@@ -485,116 +362,80 @@ function drawChart() {
     ================================================== */
 
     const legendX =
-        width - 105;
-
+        width - 110;
 
     const legendY = 70;
 
 
-    /* PLAVO - BROJ */
+    /* PLAVI */
 
     ctx.fillStyle =
         "#0066ff";
 
-
     ctx.fillRect(
-
         legendX,
-
         legendY,
-
         18,
-
         18
-
     );
 
 
     ctx.fillStyle =
         "#ffffff";
-
 
     ctx.font =
         "bold 14px Arial";
 
-
     ctx.textAlign =
         "left";
 
-
     ctx.fillText(
-
         "broj",
-
         legendX + 25,
-
         legendY + 14
-
     );
 
 
-    /* CRVENO - RAZRIJEŠENO */
+    /* CRVENI */
 
     ctx.fillStyle =
         "#ff0000";
 
-
     ctx.fillRect(
-
         legendX,
-
         legendY + 35,
-
         18,
-
         18
-
     );
 
 
     ctx.fillStyle =
         "#ffffff";
 
-
     ctx.fillText(
-
         "razriješeno",
-
         legendX + 25,
-
         legendY + 49
-
     );
 
 }
 
 
 /* ==================================================
-   FUNKCIJA ZA CRTANJE STUPCA
+   CRTANJE STUPCA
 ================================================== */
 
 function drawBar(
-
     ctx,
-
     x,
-
     value,
-
     barWidth,
-
     color,
-
     graphHeight,
-
     marginTop,
-
     minY,
-
     maxY
-
 ) {
-
 
     const baseY =
         marginTop +
@@ -609,12 +450,6 @@ function drawBar(
         graphHeight;
 
 
-    /*
-       Minimalna visina da se
-       stupac vrijednosti 2
-       jasno vidi.
-    */
-
     const visibleHeight =
         Math.max(
             valueHeight,
@@ -627,48 +462,33 @@ function drawBar(
         visibleHeight;
 
 
-    /* Stupac */
-
     ctx.fillStyle =
         color;
 
 
     ctx.fillRect(
-
         x,
-
         y,
-
         barWidth,
-
         visibleHeight
-
     );
 
 
-    /* Vrijednost iznad stupca */
+    /* Vrijednost */
 
     ctx.fillStyle =
         "#ffffff";
 
-
     ctx.font =
         "bold 14px Arial";
-
 
     ctx.textAlign =
         "center";
 
-
     ctx.fillText(
-
         value,
-
-        x +
-            barWidth / 2,
-
+        x + barWidth / 2,
         y - 6
-
     );
 
 }
@@ -679,23 +499,12 @@ function drawBar(
 ================================================== */
 
 window.addEventListener(
-
     "load",
-
     drawChart
-
 );
 
 
-/* ==================================================
-   PONOVNO CRTANJE KOD PROMJENE
-   VELIČINE PROZORA
-================================================== */
-
 window.addEventListener(
-
     "resize",
-
     drawChart
-
 );

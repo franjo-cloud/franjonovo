@@ -5,18 +5,12 @@
 
     <meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-    <title>
-        Kibernetički i računalni kriminal
-    </title>
+    <title>Kibernetički i računalni kriminal</title>
 
-    <!-- CSS -->
-    <link
-        rel="stylesheet"
-        href="style.css">
+    <link rel="stylesheet" href="style.css">
 
 </head>
 
@@ -43,44 +37,58 @@
 
 <div class="number-buttons">
 
-    <button
-        type="button"
-        onclick="buttonClick(this)">
-        Računalni Kriminal
-    </button>
+    <a href="racunalni-kriminal.html">
+        <button type="button">
+            Računalni Kriminal
+        </button>
+    </a>
 
-    <button
-        type="button"
-        onclick="buttonClick(this)">
-        Prevencija
-    </button>
+    <a href="prevencija.html">
+        <button type="button">
+            Prevencija
+        </button>
+    </a>
 
-    <button
-        type="button"
-        onclick="buttonClick(this)">
-        Statistika
-    </button>
+    <a href="statistika.html">
+        <button type="button">
+            Statistika
+        </button>
+    </a>
 
-    <button
-        type="button"
-        onclick="buttonClick(this)">
-        Novosti
-    </button>
+    <a href="novosti.html">
+        <button type="button">
+            Novosti
+        </button>
+    </a>
 
 </div>
 
 
 <!-- ==================================================
-     GLAVNI NASLOV
+     GLAVNI NASLOV - POVEZNICA
 ================================================== -->
 
 <h1>
-    Kibernetički i računalni kriminal
+
+    <a href="racunalni-kriminal.html">
+        Kibernetički i računalni kriminal
+    </a>
+
 </h1>
+<h1><a href="prevencija.html">
+        Mjere Zaštite
+    </a></h1>
+<h1><a href="statistika.html">
+        Statistički Podaci
+    </a></h1>
+<h1><a href="novosti.html">
+       Novi Napada Predviđanja
+    </a></h1>
+
 
 
 <!-- ==================================================
-     TEKST ISPOD NASLOVA
+     TEKST
 ================================================== -->
 
 <p class="small-text">
@@ -89,16 +97,20 @@
 
 
 <!-- ==================================================
-     DRUGI NASLOV
+     DRUGI NASLOV - POVEZNICA
 ================================================== -->
 
 <h2>
-    Naslov dva
+
+    <a href="prevencija.html">
+        Naslov dva
+    </a>
+
 </h2>
 
 
 <!-- ==================================================
-     TEKST ISPOD DRUGOG NASLOVA
+     TEKST
 ================================================== -->
 
 <p class="small-text">
@@ -107,7 +119,7 @@
 
 
 <!-- ==================================================
-     GUMB ZA VANJSKE POVEZNICE
+     GLAVNI GUMB
 ================================================== -->
 
 <button
@@ -128,6 +140,7 @@
 <div
     class="links"
     id="linkovi">
+
 
     <a
         href="https://www.facebook.com"
@@ -172,10 +185,11 @@
 
 
 <!-- ==================================================
-     GALERIJA SLIKA
+     GALERIJA
 ================================================== -->
 
 <div class="gallery">
+
 
     <img
         src="1.jpg"
@@ -229,16 +243,12 @@
 <div class="data-row">
 
 
-    <!-- =========================
-         TABLICA
-    ========================= -->
+    <!-- TABLICA -->
 
     <div class="table-box">
 
         <div class="table-title">
-
             Kaznena djela po gradovima 2018 - danas
-
         </div>
 
 
@@ -249,23 +259,14 @@
                 <tr>
 
                     <th>Grad</th>
-
                     <th>2018</th>
-
                     <th>2019</th>
-
                     <th>2020</th>
-
                     <th>2021</th>
-
                     <th>2022</th>
-
                     <th>2023</th>
-
                     <th>2024</th>
-
                     <th>2025</th>
-
                     <th>2026</th>
 
                 </tr>
@@ -349,23 +350,16 @@
     </div>
 
 
-    <!-- =========================
-         GRAF
-    ========================= -->
+    <!-- GRAF -->
 
     <div class="chart-box">
 
         <div class="chart-title">
-
             Broj i razriješena kaznena djela
-
         </div>
 
 
-        <canvas
-            id="myChart"
-            aria-label="Graf broja i razriješenih kaznenih djela">
-        </canvas>
+        <canvas id="myChart"></canvas>
 
     </div>
 
@@ -383,9 +377,7 @@
 </footer>
 
 
-<!-- ==================================================
-     JAVASCRIPT
-================================================== -->
+<!-- JAVASCRIPT -->
 
 <script src="script.js"></script>
 

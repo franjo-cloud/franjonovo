@@ -6,16 +6,13 @@
     box-sizing: border-box;
 }
 
-
 html {
     scroll-behavior: smooth;
 }
 
-
 body {
 
     margin: 0;
-
     padding: 0;
 
     font-family:
@@ -61,9 +58,8 @@ body {
 
     box-shadow:
         0 4px 10px
-        rgba(0, 0, 0, .4);
+        rgba(0,0,0,.4);
 }
-
 
 .banner p {
 
@@ -81,7 +77,6 @@ body {
         scroll 12s linear infinite;
 }
 
-
 @keyframes scroll {
 
     from {
@@ -98,7 +93,7 @@ body {
 
 
 /* ==================================================
-   KONTEJNER ZA 4 GUMBA
+   KONTEJNER 4 GUMBA
 ================================================== */
 
 .number-buttons {
@@ -126,7 +121,19 @@ body {
 
     box-shadow:
         0 4px 8px
-        rgba(0, 0, 0, .4);
+        rgba(0,0,0,.4);
+}
+
+
+/* ==================================================
+   POVEZNICA OKO GUMBA
+================================================== */
+
+.number-buttons a {
+
+    text-decoration: none;
+
+    display: block;
 }
 
 
@@ -137,8 +144,6 @@ body {
 .number-buttons button {
 
     width: auto;
-
-    min-width: 0;
 
     height: 20px;
 
@@ -158,10 +163,7 @@ body {
 
     color: #ff00ff;
 
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 
     font-weight: bold;
 
@@ -176,7 +178,7 @@ body {
     box-shadow:
         0 3px 0 #9a8500,
         0 5px 7px
-        rgba(0, 0, 0, .45);
+        rgba(0,0,0,.45);
 
     transition:
         transform .1s,
@@ -184,8 +186,6 @@ body {
         background .1s;
 }
 
-
-/* Gumb kada se pritisne */
 
 .number-buttons button:active {
 
@@ -197,22 +197,17 @@ body {
     box-shadow:
         0 1px 0 #756600,
         0 2px 3px
-        rgba(0, 0, 0, .4);
+        rgba(0,0,0,.4);
 }
 
 
 /* ==================================================
-   GLAVNI NASLOV
+   NASLOVI
 ================================================== */
 
 h1 {
 
     color: #fff000;
-
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
 
     font-size: 32px;
 
@@ -221,18 +216,9 @@ h1 {
 }
 
 
-/* ==================================================
-   DRUGI NASLOV
-================================================== */
-
 h2 {
 
     color: #fff000;
-
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
 
     font-size: 26px;
 
@@ -241,8 +227,30 @@ h2 {
 }
 
 
+/* Naslovi su poveznice */
+
+h1 a,
+h2 a {
+
+    color: #fff000;
+
+    text-decoration: none;
+
+    transition: .2s;
+}
+
+
+/* Kada se prijeđe mišem */
+
+h1 a:hover,
+h2 a:hover {
+
+    text-decoration: underline;
+}
+
+
 /* ==================================================
-   TEKST 12 PX
+   TEKST
 ================================================== */
 
 .small-text {
@@ -252,10 +260,7 @@ h2 {
 
     color: #fff000;
 
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 
     font-size: 12px;
 
@@ -264,7 +269,7 @@ h2 {
 
 
 /* ==================================================
-   GUMB ZA POVEZNICE
+   GLAVNI GUMB
 ================================================== */
 
 .toggleBtn {
@@ -292,7 +297,7 @@ h2 {
 
     box-shadow:
         0 4px 8px
-        rgba(0, 0, 0, .5);
+        rgba(0,0,0,.5);
 
     cursor: pointer;
 
@@ -302,7 +307,9 @@ h2 {
 
     z-index: 1000;
 
-    transition: .4s;
+    transition:
+        transform .4s,
+        box-shadow .1s;
 }
 
 
@@ -310,17 +317,22 @@ h2 {
 
     box-shadow:
         0 2px 3px
-        rgba(0, 0, 0, .5);
+        rgba(0,0,0,.5);
 
     transform:
         translateY(2px);
 }
 
 
+/*
+   OTVOREN GUMB:
+   OKRETANJE 90 STUPNJEVA UDESNO
+*/
+
 .toggleBtn.rotate {
 
     transform:
-        rotate(180deg);
+        rotate(90deg);
 }
 
 
@@ -342,7 +354,7 @@ h2 {
     padding: 10px;
 
     background:
-        rgba(0, 0, 0, .2);
+        rgba(0,0,0,.2);
 
     border-radius: 12px;
 }
@@ -378,7 +390,7 @@ h2 {
     box-shadow:
         0 4px 0 #001d38,
         0 6px 9px
-        rgba(0, 0, 0, .45);
+        rgba(0,0,0,.45);
 
     transition:
         transform .1s,
@@ -397,7 +409,7 @@ h2 {
     box-shadow:
         0 1px 0 #00152a,
         0 2px 4px
-        rgba(0, 0, 0, .4);
+        rgba(0,0,0,.4);
 }
 
 
@@ -415,7 +427,7 @@ h2 {
     display: grid;
 
     grid-template-columns:
-        repeat(4, minmax(0, 1fr));
+        repeat(4, minmax(0,1fr));
 
     gap: 15px;
 
@@ -439,7 +451,7 @@ h2 {
 
     box-shadow:
         0 0 12px
-        rgba(0, 0, 0, .5);
+        rgba(0,0,0,.5);
 
     transition: .3s;
 }
@@ -464,7 +476,7 @@ h2 {
 
 
 /* ==================================================
-   GOOGLE KARTA
+   KARTA
 ================================================== */
 
 .map {
@@ -487,7 +499,7 @@ h2 {
 
     box-shadow:
         0 4px 10px
-        rgba(0, 0, 0, .5);
+        rgba(0,0,0,.5);
 }
 
 
@@ -538,14 +550,7 @@ h2 {
 
     overflow-x: auto;
 
-    -webkit-overflow-scrolling:
-        touch;
-
     border-radius: 10px;
-
-    border:
-        1px solid
-        rgba(255, 255, 255, .5);
 }
 
 
@@ -575,30 +580,6 @@ table {
     min-width: 850px;
 
     width: 100%;
-
-    animation:
-        tableShow 1.5s ease;
-}
-
-
-@keyframes tableShow {
-
-    from {
-
-        opacity: 0;
-
-        transform:
-            translateY(40px);
-    }
-
-    to {
-
-        opacity: 1;
-
-        transform:
-            translateY(0);
-    }
-
 }
 
 
@@ -628,12 +609,6 @@ td {
 }
 
 
-tr {
-
-    transition: .3s;
-}
-
-
 tr:hover {
 
     background: #b7ffb7;
@@ -650,10 +625,6 @@ tr:hover {
 
     min-width: 450px;
 
-    /*
-       PROZIRNA POZADINA GRAFA
-    */
-
     background: transparent;
 
     border-radius: 10px;
@@ -662,7 +633,7 @@ tr:hover {
 
     border:
         1px solid
-        rgba(255, 255, 255, .5);
+        rgba(255,255,255,.5);
 
     padding-bottom: 10px;
 }
@@ -692,10 +663,6 @@ tr:hover {
     width: 100%;
 
     height: 430px;
-
-    /*
-       PROZIRAN CANVAS
-    */
 
     background: transparent;
 }
@@ -732,12 +699,10 @@ footer {
         align-items: center;
     }
 
-
     .table-box {
 
         width: 100%;
     }
-
 
     .chart-box {
 
@@ -757,8 +722,6 @@ footer {
 
         margin:
             10px auto 5px;
-
-        border-radius: 8px;
     }
 
 
@@ -774,20 +737,18 @@ footer {
 
         width: 95%;
 
-        padding: 5px;
-
         flex-wrap: wrap;
+
+        padding: 5px;
     }
 
 
     .number-buttons button {
 
-        height: 20px;
+        font-size: 13px;
 
         padding:
             0 8px;
-
-        font-size: 13px;
     }
 
 
@@ -796,9 +757,6 @@ footer {
         font-size: 23px;
 
         line-height: 1.2;
-
-        margin:
-            15px 10px 8px;
     }
 
 
@@ -843,12 +801,9 @@ footer {
         width: 92%;
 
         grid-template-columns:
-            repeat(2, minmax(0, 1fr));
+            repeat(2, minmax(0,1fr));
 
         gap: 10px;
-
-        margin:
-            15px auto;
     }
 
 
@@ -872,37 +827,9 @@ footer {
     }
 
 
-    .chart-box {
-
-        width: 100%;
-    }
-
-
     #myChart {
 
         height: 350px;
-    }
-
-
-    .table-title,
-    .chart-title {
-
-        font-size: 15px;
-    }
-
-
-    table {
-
-        min-width: 850px;
-
-        font-size: 13px;
-    }
-
-
-    th,
-    td {
-
-        padding: 8px;
     }
 
 
@@ -916,10 +843,6 @@ footer {
 
 }
 
-
-/* ==================================================
-   VRLO MALI MOBITELI
-================================================== */
 
 @media (max-width: 400px) {
 
@@ -938,19 +861,15 @@ footer {
     .number-buttons {
 
         gap: 3px;
-
-        padding: 4px;
     }
 
 
     .number-buttons button {
 
-        height: 20px;
+        font-size: 12px;
 
         padding:
             0 6px;
-
-        font-size: 12px;
     }
 
 
@@ -1001,12 +920,6 @@ footer {
 @media (hover: none) {
 
     .gallery img:hover {
-
-        transform: none;
-    }
-
-
-    tr:hover {
 
         transform: none;
     }
