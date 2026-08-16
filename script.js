@@ -1,41 +1,49 @@
 /* ==================================================
-   GLAVNI GUMB - OTVARANJE POVEZNICA
+   MOBILNI IZBORNIK
 ================================================== */
 
-function showLinks() {
+const menuButton =
+    document.getElementById("menuButton");
 
-    const links =
-        document.getElementById("linkovi");
-
-    const btn =
-        document.getElementById("btn");
+const mainNav =
+    document.querySelector(".main-nav");
 
 
-    if (links.style.display === "block") {
+if (menuButton && mainNav) {
 
-        links.style.display = "none";
+    menuButton.addEventListener(
+        "click",
+        function () {
 
-        btn.classList.remove("rotate");
+            mainNav.classList.toggle("open");
 
-        btn.setAttribute(
-            "aria-label",
-            "Otvori poveznice"
-        );
 
-    }
+            if (
+                mainNav.classList.contains("open")
+            ) {
 
-    else {
+                menuButton.textContent = "×";
 
-        links.style.display = "block";
+                menuButton.setAttribute(
+                    "aria-label",
+                    "Zatvori izbornik"
+                );
 
-        btn.classList.add("rotate");
+            }
 
-        btn.setAttribute(
-            "aria-label",
-            "Zatvori poveznice"
-        );
+            else {
 
-    }
+                menuButton.textContent = "☰";
+
+                menuButton.setAttribute(
+                    "aria-label",
+                    "Otvori izbornik"
+                );
+
+            }
+
+        }
+    );
 
 }
 
@@ -44,26 +52,30 @@ function showLinks() {
    ZOOM SLIKA
 ================================================== */
 
-function zoom(img) {
+function zoomImage(image) {
 
-    const slike =
+    const images =
         document.querySelectorAll(
             ".gallery img"
         );
 
 
-    slike.forEach(function(slika) {
+    images.forEach(
+        function (item) {
 
-        if (slika !== img) {
+            if (item !== image) {
 
-            slika.classList.remove("zoom");
+                item.classList.remove(
+                    "zoom"
+                );
+
+            }
 
         }
+    );
 
-    });
 
-
-    img.classList.toggle("zoom");
+    image.classList.toggle("zoom");
 
 }
 
@@ -72,101 +84,137 @@ function zoom(img) {
    GRAF
 ================================================== */
 
-function drawChart() {
+function drawCrimeChart() {
+
 
     const canvas =
-        document.getElementById("myChart");
+        document.getElementById(
+            "crimeChart"
+        );
 
 
     if (!canvas) {
+
         return;
+
     }
+
+
+    const container =
+        canvas.parentElement;
+
+
+    const width =
+        container.clientWidth;
+
+
+    const height =
+        container.clientHeight;
+
+
+    const ratio =
+        window.devicePixelRatio || 1;
+
+
+    canvas.width =
+        width * ratio;
+
+
+    canvas.height =
+        height * ratio;
+
+
+    canvas.style.width =
+        width + "px";
+
+
+    canvas.style.height =
+        height + "px";
 
 
     const ctx =
         canvas.getContext("2d");
 
 
+    ctx.scale(
+        ratio,
+        ratio
+    );
+
+
+    /* ----------------------------------------------
+       PODACI
+    ---------------------------------------------- */
+
     const cities = [
+
         "Zagreb",
         "Osijek",
         "Rijeka",
         "Split"
+
     ];
 
-
-    /* PLAVI = BROJ */
 
     const broj = [
+
         2,
         2,
         2,
         2
+
     ];
 
-
-    /* CRVENI = RAZRIJEŠENO */
 
     const razrijeseno = [
+
         2,
         2,
         2,
         2
+
     ];
 
 
-    const rect =
-        canvas.getBoundingClientRect();
+    /* ----------------------------------------------
+       DIMENZIJE
+    ---------------------------------------------- */
+
+    const left =
+        width < 500
+            ? 40
+            : 50;
 
 
-    const dpr =
-        window.devicePixelRatio || 1;
+    const right =
+        width < 500
+            ? 20
+            : 105;
 
 
-    canvas.width =
-        rect.width * dpr;
+    const top = 25;
 
-    canvas.height =
-        rect.height * dpr;
-
-
-    ctx.scale(dpr, dpr);
-
-
-    const width =
-        rect.width;
-
-    const height =
-        rect.height;
-
-
-    const marginLeft = 55;
-
-    const marginRight = 125;
-
-    const marginTop = 20;
-
-    const marginBottom = 60;
+    const bottom = 55;
 
 
     const graphWidth =
         width -
-        marginLeft -
-        marginRight;
+        left -
+        right;
 
 
     const graphHeight =
         height -
-        marginTop -
-        marginBottom;
+        top -
+        bottom;
 
 
-    const minY = 2;
-
-    const maxY = 20;
+    const maxValue = 20;
 
 
-    /* Prozirna pozadina */
+    /* ----------------------------------------------
+       PROZIRNA POZADINA
+    ---------------------------------------------- */
 
     ctx.clearRect(
         0,
@@ -176,17 +224,13 @@ function drawChart() {
     );
 
 
-    /* ==================================================
-       HORIZONTALNE LINIJE
-    ================================================== */
-
-    ctx.lineWidth = 1;
-
-    ctx.strokeStyle =
-        "rgba(220,220,220,.75)";
+    /* ----------------------------------------------
+       VODORAVNE LINIJE
+    ---------------------------------------------- */
 
     ctx.font =
-        "bold 14px Arial";
+        "10px Arial";
+
 
     ctx.textAlign =
         "right";
@@ -198,90 +242,98 @@ function drawChart() {
         value += 2
     ) {
 
+
         const y =
-            marginTop +
+            top +
             graphHeight -
             (
-                (value - minY) /
-                (maxY - minY)
+                value /
+                maxValue
             ) *
             graphHeight;
 
 
         ctx.beginPath();
 
+
         ctx.moveTo(
-            marginLeft,
+            left,
             y
         );
 
+
         ctx.lineTo(
-            width - marginRight,
+            width - right,
             y
         );
+
+
+        ctx.strokeStyle =
+            "rgba(150,190,210,.18)";
+
+
+        ctx.lineWidth = 1;
+
 
         ctx.stroke();
 
 
         ctx.fillStyle =
-            "#ffffff";
+            "#8FA9B8";
+
 
         ctx.fillText(
             value,
-            marginLeft - 8,
-            y + 5
+            left - 7,
+            y + 4
         );
 
     }
 
 
-    /* ==================================================
-       OSI
-    ================================================== */
+    /* ----------------------------------------------
+       OX I OY
+    ---------------------------------------------- */
+
+    const baseY =
+        top + graphHeight;
+
+
+    ctx.beginPath();
+
+
+    ctx.moveTo(
+        left,
+        top
+    );
+
+
+    ctx.lineTo(
+        left,
+        baseY
+    );
+
+
+    ctx.lineTo(
+        width - right,
+        baseY
+    );
+
 
     ctx.strokeStyle =
-        "rgba(0,0,0,.9)";
-
-    ctx.lineWidth = 2;
+        "#527489";
 
 
-    /* Y */
+    ctx.lineWidth =
+        1.5;
 
-    ctx.beginPath();
-
-    ctx.moveTo(
-        marginLeft,
-        marginTop
-    );
-
-    ctx.lineTo(
-        marginLeft,
-        marginTop + graphHeight
-    );
 
     ctx.stroke();
 
 
-    /* X */
-
-    ctx.beginPath();
-
-    ctx.moveTo(
-        marginLeft,
-        marginTop + graphHeight
-    );
-
-    ctx.lineTo(
-        width - marginRight,
-        marginTop + graphHeight
-    );
-
-    ctx.stroke();
-
-
-    /* ==================================================
+    /* ----------------------------------------------
        STUPCI
-    ================================================== */
+    ---------------------------------------------- */
 
     const groupWidth =
         graphWidth /
@@ -289,17 +341,17 @@ function drawChart() {
 
 
     const barWidth =
-        Math.min(
-            35,
-            groupWidth * .22
-        );
+        width < 500
+            ? 13
+            : 22;
 
 
     cities.forEach(
-        function(city, index) {
+        function (city, index) {
 
-            const centerX =
-                marginLeft +
+
+            const center =
+                left +
                 groupWidth * index +
                 groupWidth / 2;
 
@@ -307,116 +359,128 @@ function drawChart() {
             /* PLAVI - BROJ */
 
             drawBar(
+
                 ctx,
-                centerX - barWidth - 2,
+
+                center -
+                barWidth -
+                2,
+
                 broj[index],
+
                 barWidth,
-                "#0066ff",
+
+                "#348AC7",
+
+                top,
+
                 graphHeight,
-                marginTop,
-                minY,
-                maxY
+
+                maxValue,
+
+                baseY
+
             );
 
 
             /* CRVENI - RAZRIJEŠENO */
 
             drawBar(
+
                 ctx,
-                centerX + 2,
+
+                center + 2,
+
                 razrijeseno[index],
+
                 barWidth,
-                "#ff0000",
+
+                "#D9534F",
+
+                top,
+
                 graphHeight,
-                marginTop,
-                minY,
-                maxY
+
+                maxValue,
+
+                baseY
+
             );
 
 
-            /* GRAD */
+            /* NAZIV GRADA */
 
             ctx.fillStyle =
-                "#ffffff";
+                "#B9CBD5";
+
 
             ctx.font =
-                "bold 14px Arial";
+                width < 500
+                    ? "9px Arial"
+                    : "11px Arial";
+
 
             ctx.textAlign =
                 "center";
 
+
             ctx.fillText(
+
                 city,
-                centerX,
-                marginTop +
-                graphHeight +
-                25
+
+                center,
+
+                baseY + 25
+
             );
 
         }
     );
 
 
-    /* ==================================================
+    /* ----------------------------------------------
        LEGENDA
-    ================================================== */
+    ---------------------------------------------- */
 
-    const legendX =
-        width - 110;
-
-    const legendY = 70;
+    if (width >= 500) {
 
 
-    /* PLAVI */
-
-    ctx.fillStyle =
-        "#0066ff";
-
-    ctx.fillRect(
-        legendX,
-        legendY,
-        18,
-        18
-    );
+        const legendX =
+            width -
+            right +
+            12;
 
 
-    ctx.fillStyle =
-        "#ffffff";
+        drawLegend(
 
-    ctx.font =
-        "bold 14px Arial";
+            ctx,
 
-    ctx.textAlign =
-        "left";
+            legendX,
 
-    ctx.fillText(
-        "broj",
-        legendX + 25,
-        legendY + 14
-    );
+            top + 20,
 
+            "#348AC7",
 
-    /* CRVENI */
+            "Broj"
 
-    ctx.fillStyle =
-        "#ff0000";
-
-    ctx.fillRect(
-        legendX,
-        legendY + 35,
-        18,
-        18
-    );
+        );
 
 
-    ctx.fillStyle =
-        "#ffffff";
+        drawLegend(
 
-    ctx.fillText(
-        "razriješeno",
-        legendX + 25,
-        legendY + 49
-    );
+            ctx,
+
+            legendX,
+
+            top + 55,
+
+            "#D9534F",
+
+            "Razriješeno"
+
+        );
+
+    }
 
 }
 
@@ -426,40 +490,31 @@ function drawChart() {
 ================================================== */
 
 function drawBar(
+
     ctx,
     x,
     value,
-    barWidth,
+    width,
     color,
+    top,
     graphHeight,
-    marginTop,
-    minY,
-    maxY
+    maxValue,
+    baseY
+
 ) {
 
-    const baseY =
-        marginTop +
-        graphHeight;
 
-
-    const valueHeight =
+    const barHeight =
         (
-            (value - minY) /
-            (maxY - minY)
+            value /
+            maxValue
         ) *
         graphHeight;
 
 
-    const visibleHeight =
-        Math.max(
-            valueHeight,
-            8
-        );
-
-
     const y =
         baseY -
-        visibleHeight;
+        barHeight;
 
 
     ctx.fillStyle =
@@ -467,44 +522,114 @@ function drawBar(
 
 
     ctx.fillRect(
+
         x,
         y,
-        barWidth,
-        visibleHeight
+        width,
+        barHeight
+
     );
 
 
-    /* Vrijednost */
+    /* VRIJEDNOST */
 
     ctx.fillStyle =
-        "#ffffff";
+        "#DDEAF0";
+
 
     ctx.font =
-        "bold 14px Arial";
+        "bold 10px Arial";
+
 
     ctx.textAlign =
         "center";
 
+
     ctx.fillText(
+
         value,
-        x + barWidth / 2,
+
+        x +
+        width / 2,
+
         y - 6
+
     );
 
 }
 
 
 /* ==================================================
-   POKRETANJE GRAFA
+   LEGENDA GRAFA
+================================================== */
+
+function drawLegend(
+
+    ctx,
+    x,
+    y,
+    color,
+    text
+
+) {
+
+
+    ctx.fillStyle =
+        color;
+
+
+    ctx.fillRect(
+
+        x,
+        y,
+        10,
+        10
+
+    );
+
+
+    ctx.fillStyle =
+        "#9FB4C0";
+
+
+    ctx.font =
+        "10px Arial";
+
+
+    ctx.textAlign =
+        "left";
+
+
+    ctx.fillText(
+
+        text,
+
+        x + 15,
+
+        y + 9
+
+    );
+
+}
+
+
+/* ==================================================
+   POKRETANJE
 ================================================== */
 
 window.addEventListener(
+
     "load",
-    drawChart
+
+    drawCrimeChart
+
 );
 
 
 window.addEventListener(
+
     "resize",
-    drawChart
+
+    drawCrimeChart
+
 );
