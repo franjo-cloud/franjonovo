@@ -17,9 +17,7 @@
 
 </head>
 
-
 <body>
-
 
 <!-- ==================================================
      ZAGLAVLJE
@@ -29,15 +27,11 @@
 
     <div class="header-inner">
 
-
-        <!-- POWERED BY -->
-
         <div class="institution">
 
             <div class="institution-symbol">
                 RS
             </div>
-
 
             <div class="institution-name">
 
@@ -53,8 +47,6 @@
 
         </div>
 
-
-        <!-- GLAVNI IZBORNIK -->
 
         <nav class="main-nav">
 
@@ -82,8 +74,6 @@
         </nav>
 
 
-        <!-- MOBILNI GUMB -->
-
         <button
             id="menuButton"
             class="menu-button"
@@ -107,28 +97,29 @@
 
     <div class="hero-content">
 
-
         <div class="security-label">
             KIBERNETIČKA SIGURNOST
         </div>
 
+        <div class="title-with-image">
 
-        <h1>
+    <h1>
+        Kibernetički i
+        <span>
+            računalni kriminal
+        </span>
+    </h1>
 
-            Kibernetički i
+    <img
+        src="7.jpg"
+        alt="Kibernetički kriminal"
+        class="title-image">
 
-            <span>
-                računalni kriminal
-            </span>
-
-        </h1>
-
+</div>
 
         <p>
-
             Informacije, prevencija i statistički podaci
             o sigurnosti digitalnog prostora.
-
         </p>
 
 
@@ -163,7 +154,6 @@
 ================================================== -->
 
 <section class="quick-links">
-
 
     <a href="racunalni-kriminal.html">
 
@@ -248,27 +238,21 @@
 
 <section class="section-intro">
 
-
     <div class="section-line"></div>
-
 
     <span>
         DIGITALNA SIGURNOST
     </span>
 
-
     <h2>
         Sigurnost u digitalnom okruženju
     </h2>
 
-
     <p>
-
         Kibernetička sigurnost obuhvaća zaštitu
         informacijskih sustava, računalnih mreža,
         podataka i korisnika od neovlaštenog pristupa,
         zlouporabe i drugih oblika kibernetičkih prijetnji.
-
     </p>
 
 </section>
@@ -292,10 +276,8 @@
         </h3>
 
         <p>
-
             Zaštita osobnih i poslovnih podataka
             važan je dio informacijske sigurnosti.
-
         </p>
 
         <a href="prevencija.html">
@@ -316,10 +298,8 @@
         </h3>
 
         <p>
-
             Napadi mogu uključivati krađu podataka,
             prijevare, malware i neovlašteni pristup.
-
         </p>
 
         <a href="racunalni-kriminal.html">
@@ -340,10 +320,8 @@
         </h3>
 
         <p>
-
             Edukacija korisnika i odgovorno ponašanje
             smanjuju rizik od kibernetičkih incidenata.
-
         </p>
 
         <a href="prevencija.html">
@@ -361,7 +339,6 @@
 ================================================== -->
 
 <section class="statistics-section">
-
 
     <div class="section-heading">
 
@@ -392,7 +369,6 @@
 
         <div class="table-panel">
 
-
             <div class="panel-header">
 
                 <strong>
@@ -408,9 +384,7 @@
 
             <div class="table-scroll">
 
-
                 <table>
-
 
                     <thead>
 
@@ -436,7 +410,6 @@
 
 
                     <tbody>
-
 
                         <tr>
 
@@ -513,7 +486,6 @@
 
                         </tr>
 
-
                     </tbody>
 
                 </table>
@@ -527,31 +499,22 @@
 
         <div class="chart-panel">
 
-
             <div class="panel-header">
 
                 <strong>
                     Grafički prikaz
                 </strong>
 
-
                 <div class="legend">
 
                     <span>
-
                         <i class="blue"></i>
-
                         Broj
-
                     </span>
 
-
                     <span>
-
                         <i class="red"></i>
-
                         Razriješeno
-
                     </span>
 
                 </div>
@@ -561,13 +524,111 @@
 
             <div class="chart-container">
 
-                <canvas id="crimeChart">
-                </canvas>
+                <canvas id="crimeChart"></canvas>
 
             </div>
 
         </div>
 
+    </div>
+
+
+    <!-- ==================================================
+         JAVITE NAM SE
+    ================================================== -->
+
+    <div class="contact-button-container">
+
+        <button
+            id="contactButton"
+            class="contact-button"
+            type="button">
+
+            Javite nam se
+
+        </button>
+
+    </div>
+
+
+    <div
+        id="contactFormContainer"
+        class="contact-form-container">
+
+
+        <form id="contactForm">
+
+
+            <h2>
+                Javite nam se
+            </h2>
+
+
+            <label for="name">
+                Ime
+            </label>
+
+
+            <input
+                type="text"
+                id="name"
+                name="name"
+                maxlength="100"
+                placeholder="Upišite svoje ime"
+                required>
+
+
+            <label for="question">
+                Pitanje
+            </label>
+
+
+            <textarea
+                id="question"
+                name="question"
+                maxlength="500"
+                rows="7"
+                placeholder="Upišite svoje pitanje..."
+                required></textarea>
+
+
+            <div class="character-counter">
+
+                <span id="characterCount">
+                    0
+                </span>
+
+                / 500 znakova
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="send-button">
+
+                Pošalji pitanje
+
+            </button>
+
+
+            <button
+                type="button"
+                id="closeContactForm"
+                class="close-button">
+
+                Zatvori
+
+            </button>
+
+
+            <p
+                id="formMessage"
+                class="form-message">
+            </p>
+
+
+        </form>
 
     </div>
 
@@ -579,7 +640,6 @@
 ================================================== -->
 
 <section class="location-section">
-
 
     <div class="section-heading">
 
@@ -617,7 +677,6 @@
 
 <section class="gallery-section">
 
-
     <div class="section-heading">
 
         <div>
@@ -636,7 +695,6 @@
 
 
     <div class="gallery">
-
 
         <img
             src="1.jpg"
@@ -661,7 +719,6 @@
             alt="Kibernetička sigurnost 4"
             onclick="zoomImage(this)">
 
-
     </div>
 
 </section>
@@ -672,7 +729,6 @@
 ================================================== -->
 
 <section class="official-section">
-
 
     <div class="section-heading">
 
@@ -768,9 +824,7 @@
 
 <footer>
 
-
     <div class="footer-inner">
-
 
         <div>
 
@@ -798,15 +852,12 @@
 
         </div>
 
-
     </div>
-
 
 </footer>
 
 
 <script src="script.js"></script>
-
 
 </body>
 

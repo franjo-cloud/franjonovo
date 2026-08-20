@@ -951,7 +951,202 @@ tbody tr:hover {
     background: #D9534F;
 }
 
+/* =========================================
+   JAVITE NAM SE
+========================================= */
 
+.contact-button-container {
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    margin-top: 25px;
+}
+
+.contact-button {
+    border: none;
+
+    background: #fed300;
+
+    color: #ff00ff;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    padding: 14px 35px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 0 #b89b00,
+        0 8px 15px rgba(0,0,0,0.25);
+
+    transition: all 0.15s ease;
+}
+
+.contact-button:hover {
+    transform: translateY(-2px);
+}
+
+.contact-button:active {
+    transform: translateY(5px);
+
+    box-shadow:
+        0 1px 0 #b89b00,
+        0 3px 7px rgba(0,0,0,0.2);
+}
+
+
+/* =========================================
+   KONTAKTNI OBRAZAC
+========================================= */
+
+.contact-form-container {
+    display: none;
+
+    width: 100%;
+
+    max-width: 650px;
+
+    margin: 25px auto 0;
+
+    background: white;
+
+    border-radius: 12px;
+
+    padding: 25px;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,0.20);
+
+    border: 2px solid #003366;
+}
+
+.contact-form-container.active {
+    display: block;
+}
+
+.contact-form-container h2 {
+    margin-top: 0;
+
+    margin-bottom: 20px;
+
+    color: #003366;
+}
+
+#contactForm {
+    display: flex;
+
+    flex-direction: column;
+}
+
+#contactForm label {
+    margin-top: 12px;
+
+    margin-bottom: 6px;
+
+    font-weight: bold;
+
+    color: #003366;
+}
+
+#contactForm input,
+#contactForm textarea {
+    width: 100%;
+
+    padding: 12px;
+
+    border: 2px solid #ccc;
+
+    border-radius: 6px;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 16px;
+
+    outline: none;
+}
+
+#contactForm input:focus,
+#contactForm textarea:focus {
+    border-color: #003366;
+}
+
+#contactForm textarea {
+    resize: vertical;
+
+    min-height: 140px;
+}
+
+.character-counter {
+    text-align: right;
+
+    margin-top: 5px;
+
+    font-size: 13px;
+
+    color: #666;
+}
+
+.send-button {
+    margin-top: 18px;
+
+    padding: 12px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    background: #003366;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.send-button:hover {
+    background: #004d99;
+}
+
+.close-button {
+    margin-top: 10px;
+
+    padding: 10px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    background: #777;
+
+    color: white;
+
+    cursor: pointer;
+}
+
+.close-button:hover {
+    background: #555;
+}
+
+.form-message {
+    margin-top: 15px;
+
+    font-weight: bold;
+
+    text-align: center;
+}
 /* ==================================================
    KARTA
 ================================================== */
@@ -1480,6 +1675,46 @@ footer {
     .gallery img {
 
         height: 220px;
+    }
+
+}
+/* NASLOV + SLIKA DESNO */
+
+.title-with-image {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.title-with-image h1 {
+    margin: 0;
+    flex: 1;
+}
+
+.title-image {
+    height: 100px;
+    width: auto;
+    max-width: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+
+/* MOBITEL */
+
+@media (max-width: 700px) {
+
+    .title-with-image {
+        gap: 10px;
+    }
+
+    .title-image {
+        height: 100px;
+        max-width: 140px;
     }
 
 }

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="hr">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Pošalji upit - Kibernetički i računalni kriminal">
+
+    <title>Pošalji upit</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<header class="site-header">
+
+    <div class="header-inner">
+
+
+        <div class="institution">
+
+            <div class="institution-symbol">
+                RS
+            </div>
+
+            <div class="institution-name">
+
+                <span>
+                    Powered by
+                </span>
+
+                <strong>
+                    Radni Stol Operation - Franjo
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <nav class="main-nav">
+
+            <a href="index.html">
+                Početna
+            </a>
+
+            <a href="racunalni-kriminal.html">
+                Računalni kriminal
+            </a>
+
+            <a href="prevencija.html">
+                Prevencija
+            </a>
+
+            <a href="statistika.html">
+                Statistika
+            </a>
+
+            <a href="novosti.html">
+                Novosti
+            </a>
+
+        </nav>
+
+
+        <button
+            id="menuButton"
+            class="menu-button"
+            type="button">
+
+            ☰
+
+        </button>
+
+
+    </div>
+
+</header>
+
+
+
+<main class="form-page">
+
+
+    <div class="form-header">
+
+        <span class="section-label">
+            KONTAKT
+        </span>
+
+        <h1>
+            Pošalji upit
+        </h1>
+
+        <p>
+            Pošaljite pitanje ili poruku.
+        </p>
+
+    </div>
+
+
+
+    <form
+        id="questionForm"
+        class="question-form">
+
+
+        <label for="name">
+            Ime
+        </label>
+
+
+        <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Unesite ime"
+            maxlength="100"
+            required>
+
+
+        <label for="question">
+            Pitanje
+        </label>
+
+
+        <textarea
+            id="question"
+            name="question"
+            placeholder="Unesite pitanje..."
+            maxlength="500"
+            required></textarea>
+
+
+        <div class="character-count">
+            <span id="characterCount">0</span> / 500
+        </div>
+
+
+        <button
+            type="submit"
+            class="submit-button"
+            id="submitButton">
+
+            Pošalji
+
+        </button>
+
+
+        <div
+            id="formMessage"
+            class="form-message">
+        </div>
+
+
+    </form>
+
+
+    <a
+        href="index.html"
+        class="back-button">
+
+        ← Povratak na početnu
+
+    </a>
+
+
+</main>
+
+
+
+<footer>
+
+    <div class="copyright">
+
+        © 2026 Radni Stol Operation - Franjo
+
+    </div>
+
+</footer>
+
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
