@@ -1,30 +1,16 @@
-/* ==================================================
-   OSNOVNE POSTAVKE
-================================================== */
-
 * {
     box-sizing: border-box;
 }
-
 
 html {
     scroll-behavior: smooth;
 }
 
-
 body {
-
     margin: 0;
-
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
+    font-family: Arial, Helvetica, sans-serif;
     background: #071A2B;
-
     color: #EAF3F8;
-
     overflow-x: hidden;
 }
 
@@ -34,36 +20,22 @@ body {
 ================================================== */
 
 .site-header {
-
     width: 100%;
-
     background: #061522;
-
-    border-bottom:
-        1px solid #1C4868;
-
+    border-bottom: 1px solid #1C4868;
     position: sticky;
-
     top: 0;
-
     z-index: 1000;
 }
 
-
 .header-inner {
-
     width: 94%;
-
     max-width: 1250px;
-
     min-height: 76px;
-
     margin: auto;
 
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
 
     gap: 30px;
@@ -75,76 +47,51 @@ body {
 ================================================== */
 
 .institution {
-
     display: flex;
-
     align-items: center;
-
     gap: 12px;
-
     min-width: 280px;
 }
 
-
 .institution-symbol {
-
     width: 46px;
-
     height: 46px;
 
     display: flex;
-
     align-items: center;
-
     justify-content: center;
 
     background: #123F63;
-
-    border:
-        1px solid #3B86B5;
+    border: 1px solid #3B86B5;
 
     color: #69C8F4;
 
     font-size: 14px;
-
     font-weight: bold;
 
     border-radius: 6px;
-
     letter-spacing: 1px;
 }
 
-
 .institution-name {
-
     display: flex;
-
     flex-direction: column;
 
     text-align: left;
-
     line-height: 1.2;
 }
 
-
 .institution-name span {
-
     color: #69C8F4;
-
     font-size: 11px;
 
     text-transform: uppercase;
-
     letter-spacing: 1px;
 }
 
-
 .institution-name strong {
-
     color: #F4F8FA;
-
     font-size: 15px;
-
     letter-spacing: .4px;
 }
 
@@ -154,46 +101,32 @@ body {
 ================================================== */
 
 .main-nav {
-
     display: flex;
-
     align-items: center;
-
     gap: 4px;
 }
 
-
 .main-nav a {
-
     padding: 28px 12px;
 
     color: #B7CBD8;
-
     text-decoration: none;
 
     font-size: 13px;
-
     font-weight: bold;
 
-    border-bottom:
-        3px solid transparent;
+    border-bottom: 3px solid transparent;
 
     transition: .2s;
 }
 
-
 .main-nav a:hover {
-
     color: #FFFFFF;
-
     background: #0B2942;
 }
 
-
 .main-nav a.active {
-
     color: #69C8F4;
-
     border-bottom-color: #3B9DD0;
 }
 
@@ -203,20 +136,15 @@ body {
 ================================================== */
 
 .menu-button {
-
     display: none;
 
     width: 42px;
-
     height: 42px;
 
-    border:
-        1px solid #3B86B5;
-
+    border: 1px solid #3B86B5;
     border-radius: 5px;
 
     background: #0B2942;
-
     color: white;
 
     font-size: 21px;
@@ -230,11 +158,9 @@ body {
 ================================================== */
 
 .hero {
-
     min-height: 430px;
 
     display: flex;
-
     align-items: center;
 
     position: relative;
@@ -247,29 +173,23 @@ body {
             rgba(7,26,43,.95)
         );
 
-    border-bottom:
-        1px solid #1C4868;
+    border-bottom: 1px solid #1C4868;
 
     overflow: hidden;
 }
 
-
 .hero::after {
-
     content: "";
 
     position: absolute;
 
     right: -120px;
-
     top: -120px;
 
     width: 500px;
-
     height: 500px;
 
-    border:
-        1px solid rgba(80,170,220,.15);
+    border: 1px solid rgba(80,170,220,.15);
 
     border-radius: 50%;
 
@@ -278,82 +198,122 @@ body {
         0 0 0 100px rgba(80,170,220,.02);
 }
 
-
 .hero-content {
-
     width: 94%;
-
     max-width: 1250px;
 
     margin: auto;
 
     position: relative;
-
     z-index: 2;
 
     text-align: left;
 }
 
 
-.security-label {
+/* ==================================================
+   NASLOV + SLIKA 7
+================================================== */
 
+.banner-text {
+    width: 100%;
+}
+
+.title-with-image {
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    width: 100%;
+}
+
+.title-text {
+    flex: 1;
+    min-width: 0;
+}
+
+.security-label {
     display: inline-block;
 
     padding: 6px 10px;
-
     margin-bottom: 15px;
 
     color: #69C8F4;
 
-    border-left:
-        3px solid #D9534F;
+    border-left: 3px solid #D9534F;
 
-    background:
-        rgba(20,65,95,.35);
+    background: rgba(20,65,95,.35);
 
     font-size: 11px;
-
     font-weight: bold;
 
     letter-spacing: 2px;
 }
 
 
-.hero h1 {
+/*
+   OVDJE JE KONTROLA SLIKE 7.jpg
+*/
 
+.banner-image {
+    flex: 0 0 300px;
+
+    width: 300px;
+    height: 220px;
+
+    overflow: hidden;
+
+    border: 1px solid #3B86B5;
+
+    background: #061522;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.40);
+}
+
+.banner-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+
+/* ==================================================
+   HERO NASLOV
+================================================== */
+
+.hero h1 {
     max-width: 780px;
 
     margin: 0 0 18px;
 
     color: #F5F9FB;
 
-    font-size:
-        clamp(36px, 6vw, 68px);
+    font-size: clamp(36px, 6vw, 68px);
 
     line-height: 1.05;
 
     letter-spacing: -2px;
 }
 
-
 .hero h1 span {
-
     display: block;
-
     color: #5DB9E5;
 }
 
-
 .hero p {
+    max-width: 700px;
 
-    max-width: 600px;
-
-    margin: 0 0 25px;
+    margin: 20px 0 25px;
 
     color: #B5C9D5;
 
     font-size: 17px;
-
     line-height: 1.7;
 }
 
@@ -363,18 +323,13 @@ body {
 ================================================== */
 
 .hero-buttons {
-
     display: flex;
-
     gap: 10px;
-
     flex-wrap: wrap;
 }
 
-
 .primary-button,
 .secondary-button {
-
     display: inline-block;
 
     padding: 12px 22px;
@@ -384,19 +339,15 @@ body {
     text-decoration: none;
 
     font-size: 13px;
-
     font-weight: bold;
 
     transition: .2s;
 }
 
-
 .primary-button {
-
     background: #246E99;
 
-    border:
-        1px solid #5DB9E5;
+    border: 1px solid #5DB9E5;
 
     color: white;
 
@@ -404,80 +355,60 @@ body {
         0 4px 12px rgba(0,0,0,.3);
 }
 
-
 .primary-button:hover {
-
     background: #2D86B7;
-
-    transform:
-        translateY(-2px);
+    transform: translateY(-2px);
 }
 
-
 .secondary-button {
-
     background: transparent;
 
-    border:
-        1px solid #496D82;
+    border: 1px solid #496D82;
 
     color: #D9E7EE;
 }
 
-
 .secondary-button:hover {
-
     border-color: #5DB9E5;
-
     color: #5DB9E5;
 }
 
 
 /* ==================================================
-   4 GLAVNE POVEZNICE
+   4 GLAVNA GUMBA
 ================================================== */
 
 .quick-links {
-
     width: 94%;
-
     max-width: 1250px;
 
-    margin:
-        -35px auto 60px;
+    margin: -35px auto 60px;
 
     position: relative;
-
     z-index: 5;
 
     display: grid;
 
-    grid-template-columns:
-        repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr);
 
     background: #0B2437;
 
-    border:
-        1px solid #244C65;
+    border: 1px solid #244C65;
 
     box-shadow:
         0 12px 30px rgba(0,0,0,.35);
 }
 
-
 .quick-links a {
-
     min-height: 110px;
 
     padding: 18px;
 
     text-decoration: none;
 
-    border-right:
-        1px solid #244C65;
+    border-right: 1px solid #244C65;
 
     display: flex;
-
     flex-direction: column;
 
     justify-content: center;
@@ -485,41 +416,29 @@ body {
     transition: .2s;
 }
 
-
 .quick-links a:last-child {
-
     border-right: 0;
 }
 
-
 .quick-links a:hover {
-
     background: #123850;
 }
 
-
 .quick-number {
-
     color: #5DB9E5;
 
     font-size: 11px;
-
     font-weight: bold;
 
     margin-bottom: 7px;
 }
 
-
 .quick-links strong {
-
     color: #F3F7F9;
-
     font-size: 15px;
 }
 
-
 .quick-links small {
-
     margin-top: 6px;
 
     color: #8FA9B8;
@@ -533,47 +452,40 @@ body {
 ================================================== */
 
 .section-intro {
-
     width: 94%;
-
     max-width: 900px;
 
-    margin:
-        0 auto 65px;
+    margin: 0 auto 65px;
 
     text-align: center;
 }
 
-
 .section-line {
-
     width: 45px;
-
     height: 2px;
 
-    margin:
-        0 auto 12px;
+    margin: 0 auto 12px;
 
     background: #5DB9E5;
 }
 
-
 .section-intro > span,
-.section-heading span {
-
+.section-heading span,
+.section-label {
     color: #5DB9E5;
 
     font-size: 11px;
-
     font-weight: bold;
 
     letter-spacing: 2px;
 }
 
-
 .section-intro h2,
-.section-heading h2 {
-
+.section-heading h2,
+.location-section h2,
+.protection-section h2,
+.gallery-section h2,
+.official-section h2 {
     margin: 10px 0;
 
     color: #F1F7FA;
@@ -581,13 +493,10 @@ body {
     font-size: 30px;
 }
 
-
 .section-intro p {
-
     color: #9EB5C3;
 
     font-size: 15px;
-
     line-height: 1.7;
 }
 
@@ -597,93 +506,69 @@ body {
 ================================================== */
 
 .info-cards {
-
     width: 94%;
-
     max-width: 1250px;
 
-    margin:
-        0 auto 80px;
+    margin: 0 auto 80px;
 
     display: grid;
 
-    grid-template-columns:
-        repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
 
     gap: 18px;
 }
 
-
 .info-card {
-
     padding: 25px;
 
     background: #0B2437;
 
-    border:
-        1px solid #234A62;
+    border: 1px solid #234A62;
 
-    border-top:
-        3px solid #246E99;
+    border-top: 3px solid #246E99;
 
     transition: .2s;
 }
 
-
 .info-card:hover {
+    transform: translateY(-4px);
 
-    transform:
-        translateY(-4px);
-
-    border-top-color:
-        #5DB9E5;
+    border-top-color: #5DB9E5;
 
     box-shadow:
         0 10px 25px rgba(0,0,0,.25);
 }
 
-
 .card-icon {
-
     color: #5DB9E5;
 
     font-size: 12px;
-
     font-weight: bold;
 
     margin-bottom: 18px;
 }
 
-
 .info-card h3 {
-
-    margin:
-        0 0 10px;
+    margin: 0 0 10px;
 
     color: #F2F7F9;
 
     font-size: 19px;
 }
 
-
 .info-card p {
-
     color: #91AAB9;
 
     font-size: 13px;
-
     line-height: 1.7;
 
     min-height: 65px;
 }
 
-
 .info-card a {
-
     color: #5DB9E5;
 
     font-size: 12px;
-
     font-weight: bold;
 
     text-decoration: none;
@@ -697,23 +582,18 @@ body {
 .statistics-section,
 .location-section,
 .gallery-section,
-.official-section {
-
+.official-section,
+.protection-section {
     width: 94%;
-
     max-width: 1250px;
 
-    margin:
-        0 auto 80px;
+    margin: 0 auto 80px;
 }
 
-
 .section-heading {
-
     display: flex;
 
     align-items: end;
-
     justify-content: space-between;
 
     gap: 20px;
@@ -721,21 +601,16 @@ body {
     margin-bottom: 20px;
 }
 
-
 .section-heading h2 {
-
     margin-bottom: 0;
 }
 
-
 .period {
-
     padding: 8px 12px;
 
     color: #8FA9B8;
 
-    border:
-        1px solid #294D63;
+    border: 1px solid #294D63;
 
     background: #0A2030;
 
@@ -750,120 +625,90 @@ body {
 ================================================== */
 
 .data-layout {
-
     display: grid;
 
-    grid-template-columns:
-        1.35fr 1fr;
+    grid-template-columns: 1.35fr 1fr;
 
     gap: 18px;
 }
 
-
 .table-panel,
 .chart-panel {
-
     background: #0A2030;
 
-    border:
-        1px solid #244B62;
+    border: 1px solid #244B62;
 
     border-radius: 5px;
 
     overflow: hidden;
 }
 
-
 .panel-header {
-
     min-height: 55px;
 
     padding: 12px 15px;
 
     background: #0D2A40;
 
-    border-bottom:
-        1px solid #244B62;
+    border-bottom: 1px solid #244B62;
 
     display: flex;
 
     align-items: center;
-
     justify-content: space-between;
 
     gap: 15px;
 }
 
-
 .panel-header strong {
-
     color: #EAF3F7;
-
     font-size: 13px;
 }
 
-
 .panel-header > span {
-
     color: #7895A6;
-
     font-size: 10px;
 }
 
-
 .table-scroll {
-
     overflow-x: auto;
 }
 
-
 table {
-
     width: 100%;
-
     min-width: 800px;
 
     border-collapse: collapse;
 }
 
-
 th {
-
     padding: 11px 8px;
 
     background: #123A54;
 
     color: #BFD6E2;
 
-    border-right:
-        1px solid #29526A;
+    border-right: 1px solid #29526A;
 
     font-size: 10px;
 
     white-space: nowrap;
 }
 
-
 td {
-
     padding: 11px 8px;
 
     text-align: center;
 
     color: #AFC3CE;
 
-    border-right:
-        1px solid #203F52;
-
-    border-bottom:
-        1px solid #203F52;
+    border-right: 1px solid #203F52;
+    border-bottom: 1px solid #203F52;
 
     font-size: 11px;
 }
 
-
 td:first-child {
-
     color: #E9F3F7;
 
     font-weight: bold;
@@ -873,9 +718,7 @@ td:first-child {
     padding-left: 15px;
 }
 
-
 tbody tr:hover {
-
     background: #102F43;
 }
 
@@ -885,29 +728,20 @@ tbody tr:hover {
 ================================================== */
 
 .chart-container {
-
     width: 100%;
-
     height: 370px;
 
     padding: 15px;
-
-    background: transparent;
 }
 
-
 #crimeChart {
-
     display: block;
 
     width: 100%;
-
     height: 100%;
 }
 
-
 .legend {
-
     display: flex;
 
     gap: 12px;
@@ -917,9 +751,7 @@ tbody tr:hover {
     font-size: 10px;
 }
 
-
 .legend span {
-
     display: flex;
 
     align-items: center;
@@ -927,249 +759,41 @@ tbody tr:hover {
     gap: 5px;
 }
 
-
 .legend i {
-
     display: inline-block;
 
     width: 9px;
-
     height: 9px;
 
     border-radius: 1px;
 }
 
-
 .legend .blue {
-
     background: #348AC7;
 }
 
-
 .legend .red {
-
     background: #D9534F;
 }
 
-/* =========================================
-   JAVITE NAM SE
-========================================= */
 
-.contact-button-container {
-    width: 100%;
-
-    display: flex;
-
-    justify-content: center;
-
-    margin-top: 25px;
-}
-
-.contact-button {
-    border: none;
-
-    background: #fed300;
-
-    color: #ff00ff;
-
-    font-size: 18px;
-
-    font-weight: bold;
-
-    padding: 14px 35px;
-
-    border-radius: 8px;
-
-    cursor: pointer;
-
-    box-shadow:
-        0 5px 0 #b89b00,
-        0 8px 15px rgba(0,0,0,0.25);
-
-    transition: all 0.15s ease;
-}
-
-.contact-button:hover {
-    transform: translateY(-2px);
-}
-
-.contact-button:active {
-    transform: translateY(5px);
-
-    box-shadow:
-        0 1px 0 #b89b00,
-        0 3px 7px rgba(0,0,0,0.2);
-}
-
-
-/* =========================================
-   KONTAKTNI OBRAZAC
-========================================= */
-
-.contact-form-container {
-    display: none;
-
-    width: 100%;
-
-    max-width: 650px;
-
-    margin: 25px auto 0;
-
-    background: white;
-
-    border-radius: 12px;
-
-    padding: 25px;
-
-    box-shadow:
-        0 8px 25px rgba(0,0,0,0.20);
-
-    border: 2px solid #003366;
-}
-
-.contact-form-container.active {
-    display: block;
-}
-
-.contact-form-container h2 {
-    margin-top: 0;
-
-    margin-bottom: 20px;
-
-    color: #003366;
-}
-
-#contactForm {
-    display: flex;
-
-    flex-direction: column;
-}
-
-#contactForm label {
-    margin-top: 12px;
-
-    margin-bottom: 6px;
-
-    font-weight: bold;
-
-    color: #003366;
-}
-
-#contactForm input,
-#contactForm textarea {
-    width: 100%;
-
-    padding: 12px;
-
-    border: 2px solid #ccc;
-
-    border-radius: 6px;
-
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
-    font-size: 16px;
-
-    outline: none;
-}
-
-#contactForm input:focus,
-#contactForm textarea:focus {
-    border-color: #003366;
-}
-
-#contactForm textarea {
-    resize: vertical;
-
-    min-height: 140px;
-}
-
-.character-counter {
-    text-align: right;
-
-    margin-top: 5px;
-
-    font-size: 13px;
-
-    color: #666;
-}
-
-.send-button {
-    margin-top: 18px;
-
-    padding: 12px;
-
-    border: none;
-
-    border-radius: 6px;
-
-    background: #003366;
-
-    color: white;
-
-    font-size: 16px;
-
-    font-weight: bold;
-
-    cursor: pointer;
-}
-
-.send-button:hover {
-    background: #004d99;
-}
-
-.close-button {
-    margin-top: 10px;
-
-    padding: 10px;
-
-    border: none;
-
-    border-radius: 6px;
-
-    background: #777;
-
-    color: white;
-
-    cursor: pointer;
-}
-
-.close-button:hover {
-    background: #555;
-}
-
-.form-message {
-    margin-top: 15px;
-
-    font-weight: bold;
-
-    text-align: center;
-}
 /* ==================================================
    KARTA
 ================================================== */
 
 .map-container {
-
     width: 100%;
-
     height: 500px;
 
-    border:
-        1px solid #244B62;
+    border: 1px solid #244B62;
 
     background: #061522;
 
     overflow: hidden;
 }
 
-
 .map-container iframe {
-
     width: 100%;
-
     height: 100%;
 
     border: 0;
@@ -1179,30 +803,342 @@ tbody tr:hover {
 
 
 /* ==================================================
-   GALERIJA
+   GUMB JAVITE NAM SE
+   ISTI STIL KAO 4 GLAVNA GUMBA
 ================================================== */
 
-.gallery {
+.contact-button-container {
+    width: 100%;
 
+    display: flex;
+
+    justify-content: center;
+
+    margin-top: 20px;
+}
+
+.quick-contact-button {
+    min-height: 65px;
+
+    padding: 18px 40px;
+
+    border: 1px solid #244C65;
+
+    background: #0B2437;
+
+    color: #F3F7F9;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 6px 15px rgba(0,0,0,.25);
+
+    transition: .2s;
+}
+
+.quick-contact-button:hover {
+    background: #123850;
+
+    border-color: #5DB9E5;
+
+    color: #5DB9E5;
+
+    transform: translateY(-2px);
+}
+
+.quick-contact-button:active {
+    transform: translateY(1px);
+
+    box-shadow:
+        0 2px 6px rgba(0,0,0,.25);
+}
+
+
+/* ==================================================
+   KONTAKTNI PROZOR
+================================================== */
+
+.contact-modal {
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 2000;
+
+    background: rgba(0,0,0,.72);
+
+    padding: 20px;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-modal.active {
+    display: flex;
+}
+
+.contact-modal-content {
+    width: 100%;
+    max-width: 600px;
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    position: relative;
+
+    padding: 30px;
+
+    background: #0A2030;
+
+    border: 1px solid #3B86B5;
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.55);
+}
+
+.modal-close {
+    position: absolute;
+
+    right: 15px;
+    top: 10px;
+
+    width: 36px;
+    height: 36px;
+
+    border: 1px solid #496D82;
+
+    background: #0B2437;
+
+    color: #D9E7EE;
+
+    font-size: 25px;
+
+    cursor: pointer;
+}
+
+.modal-close:hover {
+    background: #D9534F;
+    color: white;
+}
+
+.contact-title {
+    margin-bottom: 25px;
+}
+
+.contact-title h2 {
+    margin: 10px 0;
+
+    color: #F1F7FA;
+
+    font-size: 28px;
+}
+
+.contact-title p {
+    color: #91AAB9;
+
+    font-size: 13px;
+}
+
+
+/* ==================================================
+   KONTAKTNI OBRAZAC
+================================================== */
+
+#contactForm {
+    display: flex;
+
+    flex-direction: column;
+}
+
+#contactForm label {
+    margin-top: 12px;
+    margin-bottom: 6px;
+
+    color: #BFD6E2;
+
+    font-weight: bold;
+    font-size: 13px;
+}
+
+#contactForm input,
+#contactForm textarea {
+    width: 100%;
+
+    padding: 12px;
+
+    border: 1px solid #315A72;
+
+    border-radius: 4px;
+
+    background: #061522;
+
+    color: white;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 15px;
+
+    outline: none;
+}
+
+#contactForm input:focus,
+#contactForm textarea:focus {
+    border-color: #5DB9E5;
+
+    box-shadow:
+        0 0 0 2px rgba(93,185,229,.12);
+}
+
+#contactForm textarea {
+    resize: vertical;
+
+    min-height: 150px;
+}
+
+.character-counter {
+    text-align: right;
+
+    margin-top: 5px;
+
+    color: #7895A6;
+
+    font-size: 12px;
+}
+
+.send-button {
+    margin-top: 18px;
+
+    padding: 13px;
+
+    border: 1px solid #5DB9E5;
+
+    border-radius: 4px;
+
+    background: #246E99;
+
+    color: white;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.send-button:hover {
+    background: #2D86B7;
+}
+
+.close-button {
+    margin-top: 10px;
+
+    padding: 12px;
+
+    border: 1px solid #496D82;
+
+    border-radius: 4px;
+
+    background: #182E3D;
+
+    color: white;
+
+    cursor: pointer;
+}
+
+.close-button:hover {
+    background: #294B5F;
+}
+
+.form-message {
+    margin-top: 15px;
+
+    text-align: center;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    min-height: 20px;
+}
+
+
+/* ==================================================
+   ZAŠTITA
+================================================== */
+
+.protection-section {
+    text-align: left;
+}
+
+.tips-grid {
     display: grid;
 
-    grid-template-columns:
-        repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
 
     gap: 15px;
 }
 
+.tip {
+    padding: 20px;
+
+    background: #0B2437;
+
+    border: 1px solid #234A62;
+}
+
+.tip-icon {
+    font-size: 25px;
+
+    margin-bottom: 10px;
+}
+
+.tip h3 {
+    margin: 0 0 8px;
+
+    color: #EAF3F7;
+
+    font-size: 16px;
+}
+
+.tip p {
+    margin: 0;
+
+    color: #91AAB9;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+}
+
+
+/* ==================================================
+   GALERIJA
+================================================== */
+
+.gallery {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 15px;
+}
 
 .gallery img {
-
     width: 100%;
 
     height: 220px;
 
     object-fit: cover;
 
-    border:
-        1px solid #294F66;
+    border: 1px solid #294F66;
 
     border-radius: 3px;
 
@@ -1213,26 +1149,20 @@ tbody tr:hover {
     filter: brightness(.82);
 }
 
-
 .gallery img:hover {
-
     filter: brightness(1);
 
     border-color: #5DB9E5;
 
-    transform:
-        translateY(-3px);
+    transform: translateY(-3px);
 }
 
-
 .gallery img.zoom {
-
     position: relative;
 
     z-index: 10;
 
-    transform:
-        scale(1.25);
+    transform: scale(1.25);
 
     filter: brightness(1);
 
@@ -1245,26 +1175,21 @@ tbody tr:hover {
 ================================================== */
 
 .official-links {
-
     display: grid;
 
-    grid-template-columns:
-        repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
 
     gap: 12px;
 }
 
-
 .official-links a {
-
     position: relative;
 
     padding: 18px;
 
     background: #0A2030;
 
-    border:
-        1px solid #244B62;
+    border: 1px solid #244B62;
 
     text-decoration: none;
 
@@ -1275,25 +1200,19 @@ tbody tr:hover {
     transition: .2s;
 }
 
-
 .official-links a:hover {
-
     background: #0F3045;
 
     border-color: #3D83A9;
 }
 
-
 .official-links strong {
-
     color: #EAF4F8;
 
     font-size: 13px;
 }
 
-
 .official-links span {
-
     margin-top: 6px;
 
     color: #819CAB;
@@ -1301,13 +1220,10 @@ tbody tr:hover {
     font-size: 11px;
 }
 
-
 .official-links b {
-
     position: absolute;
 
     right: 15px;
-
     bottom: 15px;
 
     color: #5DB9E5;
@@ -1319,18 +1235,13 @@ tbody tr:hover {
 ================================================== */
 
 footer {
-
     background: #061522;
 
-    border-top:
-        1px solid #1E435A;
+    border-top: 1px solid #1E435A;
 }
 
-
 .footer-inner {
-
     width: 94%;
-
     max-width: 1250px;
 
     min-height: 130px;
@@ -1340,15 +1251,12 @@ footer {
     display: flex;
 
     align-items: center;
-
     justify-content: space-between;
 
     gap: 30px;
 }
 
-
 .footer-inner strong {
-
     color: #DDEAF0;
 
     font-size: 12px;
@@ -1356,17 +1264,13 @@ footer {
     letter-spacing: .5px;
 }
 
-
 .footer-inner p {
-
     color: #718C9B;
 
     font-size: 11px;
 }
 
-
 .footer-right {
-
     text-align: right;
 
     display: flex;
@@ -1376,12 +1280,22 @@ footer {
     gap: 5px;
 }
 
-
 .footer-right span {
-
     color: #647F8E;
 
     font-size: 10px;
+}
+
+.copyright {
+    padding: 15px;
+
+    text-align: center;
+
+    border-top: 1px solid #18384B;
+
+    color: #607D8B;
+
+    font-size: 11px;
 }
 
 
@@ -1391,23 +1305,19 @@ footer {
 
 @media (max-width: 900px) {
 
-
     .main-nav {
-
         display: none;
 
         position: absolute;
 
         top: 76px;
-
         left: 0;
 
         width: 100%;
 
         background: #061522;
 
-        border-bottom:
-            1px solid #244B62;
+        border-bottom: 1px solid #244B62;
 
         flex-direction: column;
 
@@ -1416,71 +1326,69 @@ footer {
         padding: 8px;
     }
 
-
     .main-nav.open {
-
         display: flex;
     }
 
-
     .main-nav a {
-
         padding: 14px;
 
         border: 0;
     }
 
-
     .menu-button {
-
         display: block;
     }
 
 
-    .quick-links {
+    .title-with-image {
+        align-items: center;
+    }
 
-        grid-template-columns:
-            repeat(2, 1fr);
+    .banner-image {
+        flex: 0 0 240px;
+
+        width: 240px;
+        height: 190px;
     }
 
 
-    .quick-links a:nth-child(2) {
+    .quick-links {
+        grid-template-columns: repeat(2, 1fr);
+    }
 
+    .quick-links a:nth-child(2) {
         border-right: 0;
     }
 
-
     .quick-links a:nth-child(-n+2) {
-
-        border-bottom:
-            1px solid #244C65;
+        border-bottom: 1px solid #244C65;
     }
 
 
     .info-cards {
-
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
     }
 
 
     .data-layout {
-
         grid-template-columns: 1fr;
     }
 
 
     .gallery {
-
-        grid-template-columns:
-            repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
 
 
     .official-links {
-
         grid-template-columns: 1fr;
     }
 
+
+    .tips-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 
@@ -1490,130 +1398,133 @@ footer {
 
 @media (max-width: 600px) {
 
-
     .header-inner {
-
         min-height: 65px;
     }
 
-
     .institution {
-
         min-width: 0;
     }
 
-
     .institution-symbol {
-
         width: 38px;
-
         height: 38px;
     }
 
-
     .institution-name strong {
-
         font-size: 11px;
     }
 
-
     .institution-name span {
-
         font-size: 9px;
     }
 
-
     .main-nav {
-
         top: 65px;
     }
 
 
     .hero {
+        min-height: auto;
 
-        min-height: 410px;
+        padding: 45px 0;
     }
 
 
-    .hero h1 {
+    /*
+       Na mobitelu slika ostaje uz naslov,
+       ali se smanjuje kako ne bi izlazila van.
+    */
 
+    .title-with-image {
+        align-items: flex-start;
+
+        gap: 12px;
+    }
+
+    .banner-image {
+        flex: 0 0 125px;
+
+        width: 125px;
+        height: 150px;
+    }
+
+    .hero h1 {
         font-size: 38px;
 
         letter-spacing: -1px;
     }
 
-
     .hero p {
-
         font-size: 14px;
     }
 
 
     .quick-links {
-
         margin-top: -25px;
 
         width: 92%;
     }
 
-
     .quick-links a {
-
         min-height: 100px;
 
         padding: 13px;
     }
 
-
     .quick-links strong {
-
         font-size: 13px;
     }
 
 
     .section-heading {
-
         align-items: flex-start;
 
         flex-direction: column;
     }
 
-
     .section-heading h2 {
-
         font-size: 24px;
     }
 
-
     .period {
-
         align-self: flex-start;
     }
 
 
     .map-container {
-
         height: 350px;
     }
 
 
     .gallery {
-
-        grid-template-columns:
-            1fr 1fr;
+        grid-template-columns: 1fr 1fr;
 
         gap: 8px;
     }
 
-
     .gallery img {
-
         height: 150px;
     }
 
 
-    .footer-inner {
+    .tips-grid {
+        grid-template-columns: 1fr;
+    }
 
+
+    .contact-modal {
+        padding: 10px;
+    }
+
+    .contact-modal-content {
+        padding: 22px;
+
+        max-height: 95vh;
+    }
+
+
+    .footer-inner {
         flex-direction: column;
 
         align-items: flex-start;
@@ -1623,12 +1534,9 @@ footer {
         padding: 25px 0;
     }
 
-
     .footer-right {
-
         text-align: left;
     }
-
 }
 
 
@@ -1638,83 +1546,42 @@ footer {
 
 @media (max-width: 400px) {
 
+    .title-with-image {
+        gap: 8px;
+    }
+
+    .banner-image {
+        flex: 0 0 105px;
+
+        width: 105px;
+        height: 125px;
+    }
 
     .hero h1 {
-
         font-size: 32px;
     }
 
 
     .quick-links {
-
         grid-template-columns: 1fr;
     }
 
-
     .quick-links a {
-
         border-right: 0 !important;
 
-        border-bottom:
-            1px solid #244C65;
+        border-bottom: 1px solid #244C65;
     }
 
-
     .quick-links a:last-child {
-
         border-bottom: 0;
     }
 
 
     .gallery {
-
         grid-template-columns: 1fr;
     }
 
-
     .gallery img {
-
         height: 220px;
     }
-
-}
-/* NASLOV + SLIKA DESNO */
-
-.title-with-image {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-}
-
-.title-with-image h1 {
-    margin: 0;
-    flex: 1;
-}
-
-.title-image {
-    height: 100px;
-    width: auto;
-    max-width: 180px;
-    object-fit: cover;
-    border-radius: 8px;
-    display: block;
-
-    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-}
-
-
-/* MOBITEL */
-
-@media (max-width: 700px) {
-
-    .title-with-image {
-        gap: 10px;
-    }
-
-    .title-image {
-        height: 100px;
-        max-width: 140px;
-    }
-
 }

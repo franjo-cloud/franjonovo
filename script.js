@@ -1,94 +1,115 @@
-/* =========================================
-   MOBILNI IZBORNIK
-========================================= */
+/* ==================================================
+   MOBILNA NAVIGACIJA
+================================================== */
 
-const menuButton =
-    document.getElementById("menuButton");
-
-const mainNav =
-    document.querySelector(".main-nav");
-
+const menuButton = document.getElementById("menuButton");
+const mainNav = document.getElementById("mainNav");
 
 if (menuButton && mainNav) {
 
-    menuButton.addEventListener(
-        "click",
-        function () {
+    menuButton.addEventListener("click", function () {
 
-            mainNav.classList.toggle("open");
+        mainNav.classList.toggle("open");
 
-        }
-    );
+    });
 
 }
 
 
-/* =========================================
-   KONTAKTNI OBRAZAC
-========================================= */
+/* ==================================================
+   GALERIJA - POVEĆANJE SLIKE
+================================================== */
+
+function zoomImage(image) {
+
+    image.classList.toggle("zoom");
+
+}
+
+
+/* ==================================================
+   KONTAKTNI PROZOR
+================================================== */
 
 const contactButton =
     document.getElementById("contactButton");
 
-const contactFormContainer =
-    document.getElementById(
-        "contactFormContainer"
-    );
+const contactModal =
+    document.getElementById("contactModal");
 
-const closeContactForm =
-    document.getElementById(
-        "closeContactForm"
-    );
+const closeContact =
+    document.getElementById("closeContact");
 
-const contactForm =
-    document.getElementById(
-        "contactForm"
-    );
-
-const questionInput =
-    document.getElementById(
-        "question"
-    );
-
-const characterCount =
-    document.getElementById(
-        "characterCount"
-    );
-
-const formMessage =
-    document.getElementById(
-        "formMessage"
-    );
+const cancelContact =
+    document.getElementById("cancelContact");
 
 
-/* =========================================
-   OTVARANJE OBRASCA
-========================================= */
+function openContactModal() {
+
+    if (contactModal) {
+        contactModal.classList.add("active");
+
+        document.body.style.overflow = "hidden";
+    }
+
+}
+
+
+function closeContactModal() {
+
+    if (contactModal) {
+
+        contactModal.classList.remove("active");
+
+        document.body.style.overflow = "";
+    }
+
+}
+
 
 if (contactButton) {
 
     contactButton.addEventListener(
         "click",
-        function () {
+        openContactModal
+    );
 
-            contactFormContainer.classList.toggle(
-                "active"
-            );
+}
 
 
-            if (
-                contactFormContainer.classList.contains(
-                    "active"
-                )
-            ) {
+if (closeContact) {
 
-                contactFormContainer.scrollIntoView({
+    closeContact.addEventListener(
+        "click",
+        closeContactModal
+    );
 
-                    behavior: "smooth",
+}
 
-                    block: "center"
 
-                });
+if (cancelContact) {
+
+    cancelContact.addEventListener(
+        "click",
+        closeContactModal
+    );
+
+}
+
+
+/* ==================================================
+   KLIK IZVAN PROZORA
+================================================== */
+
+if (contactModal) {
+
+    contactModal.addEventListener(
+        "click",
+        function (event) {
+
+            if (event.target === contactModal) {
+
+                closeContactModal();
 
             }
 
@@ -98,38 +119,47 @@ if (contactButton) {
 }
 
 
-/* =========================================
-   ZATVARANJE OBRASCA
-========================================= */
+/* ==================================================
+   ESC ZA ZATVARANJE
+================================================== */
 
-if (closeContactForm) {
+document.addEventListener(
+    "keydown",
+    function (event) {
 
-    closeContactForm.addEventListener(
-        "click",
-        function () {
+        if (
+            event.key === "Escape" &&
+            contactModal &&
+            contactModal.classList.contains("active")
+        ) {
 
-            contactFormContainer.classList.remove(
-                "active"
-            );
+            closeContactModal();
 
         }
-    );
 
-}
+    }
+);
 
 
-/* =========================================
+/* ==================================================
    BROJAČ ZNAKOVA
-========================================= */
+================================================== */
 
-if (questionInput) {
+const messageInput =
+    document.getElementById("message");
 
-    questionInput.addEventListener(
+const characterCount =
+    document.getElementById("characterCount");
+
+
+if (messageInput && characterCount) {
+
+    messageInput.addEventListener(
         "input",
         function () {
 
             characterCount.textContent =
-                questionInput.value.length;
+                messageInput.value.length;
 
         }
     );
@@ -137,9 +167,16 @@ if (questionInput) {
 }
 
 
-/* =========================================
-   SLANJE PITANJA NA BACKEND
-========================================= */
+/* ==================================================
+   SLANJE KONTAKTNOG OBRASCA
+================================================== */
+
+const contactForm =
+    document.getElementById("contactForm");
+
+const formMessage =
+    document.getElementById("formMessage");
+
 
 if (contactForm) {
 
@@ -151,158 +188,112 @@ if (contactForm) {
 
 
             const name =
-                document
-                    .getElementById("name")
-                    .value
-                    .trim();
+                document.getElementById("name").value.trim();
+
+            const message =
+                document.getElementById("message").value.trim();
 
 
-            const question =
-                questionInput
-                    .value
-                    .trim();
-
-
-            /* PROVJERA IMENA */
-
-            if (!name) {
+            if (!name || !message) {
 
                 formMessage.textContent =
-                    "Molimo upišite ime.";
+                    "Molimo ispunite sva polja.";
 
                 formMessage.style.color =
-                    "red";
+                    "#D9534F";
 
                 return;
 
             }
 
 
-            if (name.length > 100) {
+            if (message.length > 500) {
 
                 formMessage.textContent =
-                    "Ime može imati najviše 100 znakova.";
+                    "Poruka može sadržavati najviše 500 znakova.";
 
                 formMessage.style.color =
-                    "red";
+                    "#D9534F";
 
                 return;
 
             }
 
-
-            /* PROVJERA PITANJA */
-
-            if (!question) {
-
-                formMessage.textContent =
-                    "Molimo upišite pitanje.";
-
-                formMessage.style.color =
-                    "red";
-
-                return;
-
-            }
-
-
-            if (question.length > 500) {
-
-                formMessage.textContent =
-                    "Pitanje može sadržavati najviše 500 znakova.";
-
-                formMessage.style.color =
-                    "red";
-
-                return;
-
-            }
-
-
-            /* PORUKA TIJEKOM SLANJA */
 
             formMessage.textContent =
-                "Slanje pitanja...";
+                "Slanje poruke...";
 
             formMessage.style.color =
-                "#003366";
+                "#69C8F4";
 
 
             try {
 
-
                 const response =
-                    await fetch(
-                        "/api/contact",
-                        {
+                    await fetch("/api/contact", {
 
-                            method: "POST",
+                        method: "POST",
 
-                            headers: {
+                        headers: {
+                            "Content-Type":
+                                "application/json"
+                        },
 
-                                "Content-Type":
-                                    "application/json"
+                        body: JSON.stringify({
 
-                            },
+                            name: name,
+                            message: message
 
-                            body: JSON.stringify({
+                        })
 
-                                name: name,
-
-                                question: question
-
-                            })
-
-                        }
-                    );
+                    });
 
 
-                const result =
+                const data =
                     await response.json();
 
 
-                /* GREŠKA SERVERA */
+                if (response.ok) {
 
-                if (!response.ok) {
+                    formMessage.textContent =
+                        "Poruka je uspješno poslana.";
 
-                    throw new Error(
-                        result.message ||
-                        "Došlo je do pogreške."
+                    formMessage.style.color =
+                        "#5DB9E5";
+
+
+                    contactForm.reset();
+
+                    characterCount.textContent = "0";
+
+
+                    setTimeout(
+                        closeContactModal,
+                        1800
                     );
+
+
+                } else {
+
+                    formMessage.textContent =
+                        data.message ||
+                        "Došlo je do greške.";
+
+                    formMessage.style.color =
+                        "#D9534F";
 
                 }
 
 
-                /* USPJEŠNO */
-
-                formMessage.textContent =
-                    "Vaše pitanje je uspješno poslano.";
-
-                formMessage.style.color =
-                    "green";
-
-
-                /* OČISTI FORMU */
-
-                contactForm.reset();
-
-                characterCount.textContent =
-                    "0";
-
-
             } catch (error) {
 
-                console.error(
-                    "Greška:",
-                    error
-                );
-
+                console.error(error);
 
                 formMessage.textContent =
-                    "Pitanje nije poslano. Pokušajte ponovno.";
+                    "Nije moguće poslati poruku.";
 
                 formMessage.style.color =
-                    "red";
+                    "#D9534F";
 
             }
 
@@ -312,156 +303,21 @@ if (contactForm) {
 }
 
 
-/* =========================================
-   GALERIJA
-========================================= */
+/* ==================================================
+   JEDNOSTAVAN GRAF
+================================================== */
 
-function zoomImage(image) {
-
-    const overlay =
-        document.createElement("div");
-
-    overlay.style.position =
-        "fixed";
-
-    overlay.style.top =
-        "0";
-
-    overlay.style.left =
-        "0";
-
-    overlay.style.width =
-        "100%";
-
-    overlay.style.height =
-        "100%";
-
-    overlay.style.background =
-        "rgba(0,0,0,0.85)";
-
-    overlay.style.display =
-        "flex";
-
-    overlay.style.alignItems =
-        "center";
-
-    overlay.style.justifyContent =
-        "center";
-
-    overlay.style.zIndex =
-        "9999";
-
-    overlay.style.cursor =
-        "pointer";
+const canvas =
+    document.getElementById("crimeChart");
 
 
-    const enlargedImage =
-        document.createElement("img");
-
-
-    enlargedImage.src =
-        image.src;
-
-
-    enlargedImage.alt =
-        image.alt;
-
-
-    enlargedImage.style.maxWidth =
-        "95%";
-
-    enlargedImage.style.maxHeight =
-        "90%";
-
-    enlargedImage.style.objectFit =
-        "contain";
-
-    enlargedImage.style.borderRadius =
-        "8px";
-
-
-    overlay.appendChild(
-        enlargedImage
-    );
-
-
-    document.body.appendChild(
-        overlay
-    );
-
-
-    overlay.addEventListener(
-        "click",
-        function () {
-
-            overlay.remove();
-
-        }
-    );
-
-}
-
-
-/* =========================================
-   GRAF
-========================================= */
-
-const chartCanvas =
-    document.getElementById(
-        "crimeChart"
-    );
-
-
-if (chartCanvas) {
+if (canvas) {
 
     const ctx =
-        chartCanvas.getContext("2d");
-
-
-    const years = [
-        "2018",
-        "2019",
-        "2020",
-        "2021",
-        "2022",
-        "2023",
-        "2024",
-        "2025",
-        "2026"
-    ];
-
-
-    const crimeData = [
-        8,
-        10,
-        12,
-        15,
-        18,
-        22,
-        25,
-        28,
-        30
-    ];
-
-
-    const solvedData = [
-        4,
-        5,
-        6,
-        8,
-        10,
-        13,
-        15,
-        18,
-        20
-    ];
+        canvas.getContext("2d");
 
 
     function drawChart() {
-
-        const canvas =
-            chartCanvas;
-
 
         const width =
             canvas.clientWidth;
@@ -470,22 +326,22 @@ if (chartCanvas) {
             canvas.clientHeight;
 
 
-        const dpr =
+        const ratio =
             window.devicePixelRatio || 1;
 
 
         canvas.width =
-            width * dpr;
+            width * ratio;
 
         canvas.height =
-            height * dpr;
+            height * ratio;
 
 
         ctx.setTransform(
-            dpr,
+            ratio,
             0,
             0,
-            dpr,
+            ratio,
             0,
             0
         );
@@ -499,43 +355,45 @@ if (chartCanvas) {
         );
 
 
-        const padding = 40;
+        const values = [
+            2, 2, 2, 2, 2,
+            2, 2, 2, 2
+        ];
 
 
-        const chartWidth =
+        const years = [
+            "2018",
+            "2019",
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025",
+            "2026"
+        ];
+
+
+        const padding = 35;
+
+        const graphWidth =
             width - padding * 2;
 
-
-        const chartHeight =
+        const graphHeight =
             height - padding * 2;
 
 
-        const maxValue =
-            Math.max(
-                ...crimeData,
-                ...solvedData
-            ) + 5;
-
-
-        /* MREŽA */
-
         ctx.strokeStyle =
-            "#dddddd";
+            "#294D63";
 
-        ctx.lineWidth =
-            1;
+        ctx.lineWidth = 1;
 
 
-        for (
-            let i = 0;
-            i <= 5;
-            i++
-        ) {
+        for (let i = 0; i <= 4; i++) {
 
             const y =
                 padding +
-                chartHeight -
-                (chartHeight / 5) * i;
+                (graphHeight / 4) * i;
 
 
             ctx.beginPath();
@@ -555,162 +413,110 @@ if (chartCanvas) {
         }
 
 
-        /* FUNKCIJA ZA CRTANJE LINIJE */
+        ctx.strokeStyle =
+            "#5DB9E5";
 
-        function drawLine(
-            data,
-            color
-        ) {
-
-            ctx.strokeStyle =
-                color;
-
-            ctx.lineWidth =
-                3;
-
-            ctx.beginPath();
+        ctx.lineWidth = 2;
 
 
-            data.forEach(
-                function (
-                    value,
-                    index
-                ) {
-
-                    const x =
-                        padding +
-                        (
-                            chartWidth /
-                            (data.length - 1)
-                        ) *
-                        index;
+        ctx.beginPath();
 
 
-                    const y =
-                        padding +
-                        chartHeight -
-                        (
-                            value /
-                            maxValue
-                        ) *
-                        chartHeight;
+        values.forEach(
+            function (value, index) {
+
+                const x =
+                    padding +
+                    (graphWidth /
+                    (values.length - 1))
+                    * index;
 
 
-                    if (index === 0) {
+                const y =
+                    height -
+                    padding -
+                    (value / 4) *
+                    graphHeight;
 
-                        ctx.moveTo(
-                            x,
-                            y
-                        );
 
-                    } else {
+                if (index === 0) {
 
-                        ctx.lineTo(
-                            x,
-                            y
-                        );
+                    ctx.moveTo(x, y);
 
-                    }
+                } else {
+
+                    ctx.lineTo(x, y);
 
                 }
-            );
 
-
-            ctx.stroke();
-
-
-            /* TOČKE */
-
-            ctx.fillStyle =
-                color;
-
-
-            data.forEach(
-                function (
-                    value,
-                    index
-                ) {
-
-                    const x =
-                        padding +
-                        (
-                            chartWidth /
-                            (data.length - 1)
-                        ) *
-                        index;
-
-
-                    const y =
-                        padding +
-                        chartHeight -
-                        (
-                            value /
-                            maxValue
-                        ) *
-                        chartHeight;
-
-
-                    ctx.beginPath();
-
-                    ctx.arc(
-                        x,
-                        y,
-                        4,
-                        0,
-                        Math.PI * 2
-                    );
-
-                    ctx.fill();
-
-                }
-            );
-
-        }
-
-
-        drawLine(
-            crimeData,
-            "#003366"
+            }
         );
 
 
-        drawLine(
-            solvedData,
-            "#cc0000"
-        );
+        ctx.stroke();
 
-
-        /* GODINE */
 
         ctx.fillStyle =
-            "#555555";
+            "#5DB9E5";
+
+
+        values.forEach(
+            function (value, index) {
+
+                const x =
+                    padding +
+                    (graphWidth /
+                    (values.length - 1))
+                    * index;
+
+
+                const y =
+                    height -
+                    padding -
+                    (value / 4) *
+                    graphHeight;
+
+
+                ctx.beginPath();
+
+                ctx.arc(
+                    x,
+                    y,
+                    4,
+                    0,
+                    Math.PI * 2
+                );
+
+                ctx.fill();
+
+            }
+        );
+
+
+        ctx.fillStyle =
+            "#8EA6B4";
 
         ctx.font =
-            "11px Arial";
+            "10px Arial";
 
         ctx.textAlign =
             "center";
 
 
         years.forEach(
-            function (
-                year,
-                index
-            ) {
+            function (year, index) {
 
                 const x =
                     padding +
-                    (
-                        chartWidth /
-                        (years.length - 1)
-                    ) *
-                    index;
+                    (graphWidth /
+                    (years.length - 1))
+                    * index;
 
 
                 ctx.fillText(
                     year,
                     x,
-                    height - 12
+                    height - 10
                 );
 
             }
